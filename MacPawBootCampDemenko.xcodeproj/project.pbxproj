@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774322A93F54900E689A9 /* AppDelegate.swift */; };
+		F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774342A93F54900E689A9 /* SceneDelegate.swift */; };
+		F6F774372A93F54900E689A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774362A93F54900E689A9 /* ViewController.swift */; };
+		F6F7743A2A93F54900E689A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F774382A93F54900E689A9 /* Main.storyboard */; };
+		F6F7743D2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6F7743B2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld */; };
+		F6F7743F2A93F54A00E689A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F7743E2A93F54A00E689A9 /* Assets.xcassets */; };
+		F6F774422A93F54A00E689A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F774402A93F54A00E689A9 /* LaunchScreen.storyboard */; };
+		F6F7744D2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7744C2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift */; };
+		F6F774572A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774562A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift */; };
+		F6F774592A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774582A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6F774492A93F54A00E689A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6F774272A93F54900E689A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6F7742E2A93F54900E689A9;
+			remoteInfo = MacPawBootCampDemenko;
+		};
+		F6F774532A93F54A00E689A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6F774272A93F54900E689A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6F7742E2A93F54900E689A9;
+			remoteInfo = MacPawBootCampDemenko;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F6F7742F2A93F54900E689A9 /* MacPawBootCampDemenko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPawBootCampDemenko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F774322A93F54900E689A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6F774342A93F54900E689A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F6F774362A93F54900E689A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6F774392A93F54900E689A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6F7743C2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPawBootCampDemenko.xcdatamodel; sourceTree = "<group>"; };
+		F6F7743E2A93F54A00E689A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6F774412A93F54A00E689A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6F774432A93F54A00E689A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6F774482A93F54A00E689A9 /* MacPawBootCampDemenkoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPawBootCampDemenkoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F7744C2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPawBootCampDemenkoTests.swift; sourceTree = "<group>"; };
+		F6F774522A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPawBootCampDemenkoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F774562A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPawBootCampDemenkoUITests.swift; sourceTree = "<group>"; };
+		F6F774582A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPawBootCampDemenkoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6F7742C2A93F54900E689A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F774452A93F54A00E689A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F7744F2A93F54A00E689A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6F774262A93F54900E689A9 = {
+			isa = PBXGroup;
+			children = (
+				F6F774312A93F54900E689A9 /* MacPawBootCampDemenko */,
+				F6F7744B2A93F54A00E689A9 /* MacPawBootCampDemenkoTests */,
+				F6F774552A93F54A00E689A9 /* MacPawBootCampDemenkoUITests */,
+				F6F774302A93F54900E689A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6F774302A93F54900E689A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6F7742F2A93F54900E689A9 /* MacPawBootCampDemenko.app */,
+				F6F774482A93F54A00E689A9 /* MacPawBootCampDemenkoTests.xctest */,
+				F6F774522A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6F774312A93F54900E689A9 /* MacPawBootCampDemenko */ = {
+			isa = PBXGroup;
+			children = (
+				F6F774322A93F54900E689A9 /* AppDelegate.swift */,
+				F6F774342A93F54900E689A9 /* SceneDelegate.swift */,
+				F6F774362A93F54900E689A9 /* ViewController.swift */,
+				F6F774382A93F54900E689A9 /* Main.storyboard */,
+				F6F7743E2A93F54A00E689A9 /* Assets.xcassets */,
+				F6F774402A93F54A00E689A9 /* LaunchScreen.storyboard */,
+				F6F774432A93F54A00E689A9 /* Info.plist */,
+				F6F7743B2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld */,
+			);
+			path = MacPawBootCampDemenko;
+			sourceTree = "<group>";
+		};
+		F6F7744B2A93F54A00E689A9 /* MacPawBootCampDemenkoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F6F7744C2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift */,
+			);
+			path = MacPawBootCampDemenkoTests;
+			sourceTree = "<group>";
+		};
+		F6F774552A93F54A00E689A9 /* MacPawBootCampDemenkoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F6F774562A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift */,
+				F6F774582A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift */,
+			);
+			path = MacPawBootCampDemenkoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6F7742E2A93F54900E689A9 /* MacPawBootCampDemenko */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F7745C2A93F54A00E689A9 /* Build configuration list for PBXNativeTarget "MacPawBootCampDemenko" */;
+			buildPhases = (
+				F6F7742B2A93F54900E689A9 /* Sources */,
+				F6F7742C2A93F54900E689A9 /* Frameworks */,
+				F6F7742D2A93F54900E689A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacPawBootCampDemenko;
+			productName = MacPawBootCampDemenko;
+			productReference = F6F7742F2A93F54900E689A9 /* MacPawBootCampDemenko.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6F774472A93F54A00E689A9 /* MacPawBootCampDemenkoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F7745F2A93F54A00E689A9 /* Build configuration list for PBXNativeTarget "MacPawBootCampDemenkoTests" */;
+			buildPhases = (
+				F6F774442A93F54A00E689A9 /* Sources */,
+				F6F774452A93F54A00E689A9 /* Frameworks */,
+				F6F774462A93F54A00E689A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6F7744A2A93F54A00E689A9 /* PBXTargetDependency */,
+			);
+			name = MacPawBootCampDemenkoTests;
+			productName = MacPawBootCampDemenkoTests;
+			productReference = F6F774482A93F54A00E689A9 /* MacPawBootCampDemenkoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F6F774512A93F54A00E689A9 /* MacPawBootCampDemenkoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F774622A93F54A00E689A9 /* Build configuration list for PBXNativeTarget "MacPawBootCampDemenkoUITests" */;
+			buildPhases = (
+				F6F7744E2A93F54A00E689A9 /* Sources */,
+				F6F7744F2A93F54A00E689A9 /* Frameworks */,
+				F6F774502A93F54A00E689A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6F774542A93F54A00E689A9 /* PBXTargetDependency */,
+			);
+			name = MacPawBootCampDemenkoUITests;
+			productName = MacPawBootCampDemenkoUITests;
+			productReference = F6F774522A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6F774272A93F54900E689A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F6F7742E2A93F54900E689A9 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					F6F774472A93F54A00E689A9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = F6F7742E2A93F54900E689A9;
+					};
+					F6F774512A93F54A00E689A9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = F6F7742E2A93F54900E689A9;
+					};
+				};
+			};
+			buildConfigurationList = F6F7742A2A93F54900E689A9 /* Build configuration list for PBXProject "MacPawBootCampDemenko" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6F774262A93F54900E689A9;
+			productRefGroup = F6F774302A93F54900E689A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6F7742E2A93F54900E689A9 /* MacPawBootCampDemenko */,
+				F6F774472A93F54A00E689A9 /* MacPawBootCampDemenkoTests */,
+				F6F774512A93F54A00E689A9 /* MacPawBootCampDemenkoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6F7742D2A93F54900E689A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F774422A93F54A00E689A9 /* LaunchScreen.storyboard in Resources */,
+				F6F7743F2A93F54A00E689A9 /* Assets.xcassets in Resources */,
+				F6F7743A2A93F54900E689A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F774462A93F54A00E689A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F774502A93F54A00E689A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6F7742B2A93F54900E689A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F774372A93F54900E689A9 /* ViewController.swift in Sources */,
+				F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */,
+				F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */,
+				F6F7743D2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F774442A93F54A00E689A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F7744D2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F7744E2A93F54A00E689A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F774592A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift in Sources */,
+				F6F774572A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6F7744A2A93F54A00E689A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6F7742E2A93F54900E689A9 /* MacPawBootCampDemenko */;
+			targetProxy = F6F774492A93F54A00E689A9 /* PBXContainerItemProxy */;
+		};
+		F6F774542A93F54A00E689A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6F7742E2A93F54900E689A9 /* MacPawBootCampDemenko */;
+			targetProxy = F6F774532A93F54A00E689A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F6F774382A93F54900E689A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6F774392A93F54900E689A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F6F774402A93F54A00E689A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6F774412A93F54A00E689A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6F7745A2A93F54A00E689A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6F7745B2A93F54A00E689A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6F7745D2A93F54A00E689A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9495ZGT5QK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacPawBootCampDemenko/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kub.MacPawBootCampDemenko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6F7745E2A93F54A00E689A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9495ZGT5QK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacPawBootCampDemenko/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kub.MacPawBootCampDemenko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F6F774602A93F54A00E689A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9495ZGT5QK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kub.MacPawBootCampDemenkoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPawBootCampDemenko.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacPawBootCampDemenko";
+			};
+			name = Debug;
+		};
+		F6F774612A93F54A00E689A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9495ZGT5QK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kub.MacPawBootCampDemenkoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacPawBootCampDemenko.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacPawBootCampDemenko";
+			};
+			name = Release;
+		};
+		F6F774632A93F54A00E689A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9495ZGT5QK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kub.MacPawBootCampDemenkoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacPawBootCampDemenko;
+			};
+			name = Debug;
+		};
+		F6F774642A93F54A00E689A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9495ZGT5QK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kub.MacPawBootCampDemenkoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacPawBootCampDemenko;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6F7742A2A93F54900E689A9 /* Build configuration list for PBXProject "MacPawBootCampDemenko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F7745A2A93F54A00E689A9 /* Debug */,
+				F6F7745B2A93F54A00E689A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F7745C2A93F54A00E689A9 /* Build configuration list for PBXNativeTarget "MacPawBootCampDemenko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F7745D2A93F54A00E689A9 /* Debug */,
+				F6F7745E2A93F54A00E689A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F7745F2A93F54A00E689A9 /* Build configuration list for PBXNativeTarget "MacPawBootCampDemenkoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F774602A93F54A00E689A9 /* Debug */,
+				F6F774612A93F54A00E689A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F774622A93F54A00E689A9 /* Build configuration list for PBXNativeTarget "MacPawBootCampDemenkoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F774632A93F54A00E689A9 /* Debug */,
+				F6F774642A93F54A00E689A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F6F7743B2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F6F7743C2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodel */,
+			);
+			currentVersion = F6F7743C2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodel */;
+			path = MacPawBootCampDemenko.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F6F774272A93F54900E689A9 /* Project object */;
+}
