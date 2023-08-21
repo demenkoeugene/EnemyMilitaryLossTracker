@@ -10,11 +10,21 @@
 		F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774322A93F54900E689A9 /* AppDelegate.swift */; };
 		F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774342A93F54900E689A9 /* SceneDelegate.swift */; };
 		F6F774372A93F54900E689A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774362A93F54900E689A9 /* ViewController.swift */; };
-		F6F7743D2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6F7743B2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld */; };
 		F6F7743F2A93F54A00E689A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F7743E2A93F54A00E689A9 /* Assets.xcassets */; };
 		F6F7744D2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7744C2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift */; };
 		F6F774572A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774562A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift */; };
 		F6F774592A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774582A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift */; };
+		F6F774662A93F79A00E689A9 /* ModelParsingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774652A93F79A00E689A9 /* ModelParsingJSON.swift */; };
+		F6F774682A93F7A400E689A9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774672A93F7A400E689A9 /* APIManager.swift */; };
+		F6F7746B2A93F7D100E689A9 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */; };
+		F6F7746D2A93F7E500E689A9 /* data in Resources */ = {isa = PBXBuildFile; fileRef = F6F7746C2A93F7E500E689A9 /* data */; };
+		F6F774702A93F7F600E689A9 /* MacPawBootcamp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6F7746E2A93F7F600E689A9 /* MacPawBootcamp.xcdatamodeld */; };
+		F6F774752A93F80400E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774712A93F80400E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift */; };
+		F6F774762A93F80400E689A9 /* MilitaryLosses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774722A93F80400E689A9 /* MilitaryLosses+CoreDataClass.swift */; };
+		F6F774772A93F80400E689A9 /* MilitaryLosses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774732A93F80400E689A9 /* MilitaryLosses+CoreDataProperties.swift */; };
+		F6F774782A93F80400E689A9 /* EquipmentLossesOryx+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774742A93F80400E689A9 /* EquipmentLossesOryx+CoreDataClass.swift */; };
+		F6F7747B2A93F81100E689A9 /* PersonnelLosses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774792A93F81100E689A9 /* PersonnelLosses+CoreDataProperties.swift */; };
+		F6F7747C2A93F81100E689A9 /* PersonnelLosses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7747A2A93F81100E689A9 /* PersonnelLosses+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +49,6 @@
 		F6F774322A93F54900E689A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F774342A93F54900E689A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F6F774362A93F54900E689A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F6F7743C2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPawBootCampDemenko.xcdatamodel; sourceTree = "<group>"; };
 		F6F7743E2A93F54A00E689A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6F774432A93F54A00E689A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F774482A93F54A00E689A9 /* MacPawBootCampDemenkoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPawBootCampDemenkoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +56,17 @@
 		F6F774522A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPawBootCampDemenkoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F774562A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPawBootCampDemenkoUITests.swift; sourceTree = "<group>"; };
 		F6F774582A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPawBootCampDemenkoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F6F774652A93F79A00E689A9 /* ModelParsingJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelParsingJSON.swift; sourceTree = "<group>"; };
+		F6F774672A93F7A400E689A9 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		F6F7746C2A93F7E500E689A9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		F6F7746F2A93F7F600E689A9 /* MacPawBootcamp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPawBootcamp.xcdatamodel; sourceTree = "<group>"; };
+		F6F774712A93F80400E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryx+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6F774722A93F80400E689A9 /* MilitaryLosses+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6F774732A93F80400E689A9 /* MilitaryLosses+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6F774742A93F80400E689A9 /* EquipmentLossesOryx+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryx+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6F774792A93F81100E689A9 /* PersonnelLosses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonnelLosses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6F7747A2A93F81100E689A9 /* PersonnelLosses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonnelLosses+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +117,16 @@
 		F6F774312A93F54900E689A9 /* MacPawBootCampDemenko */ = {
 			isa = PBXGroup;
 			children = (
+				F6F7746C2A93F7E500E689A9 /* data */,
+				F6F774692A93F7C100E689A9 /* DBModel */,
 				F6F774322A93F54900E689A9 /* AppDelegate.swift */,
 				F6F774342A93F54900E689A9 /* SceneDelegate.swift */,
 				F6F774362A93F54900E689A9 /* ViewController.swift */,
 				F6F7743E2A93F54A00E689A9 /* Assets.xcassets */,
 				F6F774432A93F54A00E689A9 /* Info.plist */,
-				F6F7743B2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld */,
+				F6F774652A93F79A00E689A9 /* ModelParsingJSON.swift */,
+				F6F774672A93F7A400E689A9 /* APIManager.swift */,
+				F6F7746E2A93F7F600E689A9 /* MacPawBootcamp.xcdatamodeld */,
 			);
 			path = MacPawBootCampDemenko;
 			sourceTree = "<group>";
@@ -122,6 +146,20 @@
 				F6F774582A93F54A00E689A9 /* MacPawBootCampDemenkoUITestsLaunchTests.swift */,
 			);
 			path = MacPawBootCampDemenkoUITests;
+			sourceTree = "<group>";
+		};
+		F6F774692A93F7C100E689A9 /* DBModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6F7747A2A93F81100E689A9 /* PersonnelLosses+CoreDataClass.swift */,
+				F6F774792A93F81100E689A9 /* PersonnelLosses+CoreDataProperties.swift */,
+				F6F774742A93F80400E689A9 /* EquipmentLossesOryx+CoreDataClass.swift */,
+				F6F774712A93F80400E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift */,
+				F6F774722A93F80400E689A9 /* MilitaryLosses+CoreDataClass.swift */,
+				F6F774732A93F80400E689A9 /* MilitaryLosses+CoreDataProperties.swift */,
+				F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */,
+			);
+			path = DBModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F7746D2A93F7E500E689A9 /* data in Resources */,
 				F6F7743F2A93F54A00E689A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,10 +292,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F774682A93F7A400E689A9 /* APIManager.swift in Sources */,
+				F6F7747B2A93F81100E689A9 /* PersonnelLosses+CoreDataProperties.swift in Sources */,
+				F6F774772A93F80400E689A9 /* MilitaryLosses+CoreDataProperties.swift in Sources */,
+				F6F774702A93F7F600E689A9 /* MacPawBootcamp.xcdatamodeld in Sources */,
+				F6F7747C2A93F81100E689A9 /* PersonnelLosses+CoreDataClass.swift in Sources */,
+				F6F7746B2A93F7D100E689A9 /* PersistenceController.swift in Sources */,
+				F6F774662A93F79A00E689A9 /* ModelParsingJSON.swift in Sources */,
 				F6F774372A93F54900E689A9 /* ViewController.swift in Sources */,
+				F6F774782A93F80400E689A9 /* EquipmentLossesOryx+CoreDataClass.swift in Sources */,
+				F6F774752A93F80400E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift in Sources */,
 				F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */,
 				F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */,
-				F6F7743D2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld in Sources */,
+				F6F774762A93F80400E689A9 /* MilitaryLosses+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,13 +627,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F6F7743B2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodeld */ = {
+		F6F7746E2A93F7F600E689A9 /* MacPawBootcamp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F6F7743C2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodel */,
+				F6F7746F2A93F7F600E689A9 /* MacPawBootcamp.xcdatamodel */,
 			);
-			currentVersion = F6F7743C2A93F54900E689A9 /* MacPawBootCampDemenko.xcdatamodel */;
-			path = MacPawBootCampDemenko.xcdatamodeld;
+			currentVersion = F6F7746F2A93F7F600E689A9 /* MacPawBootcamp.xcdatamodel */;
+			path = MacPawBootcamp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
