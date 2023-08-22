@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let viewController = ViewController() // Create your view controller instance
+        let viewController = TabbarController() // Create your view controller instance
         let navigationController = UINavigationController(rootViewController: viewController)
         
         // Set the root view controller

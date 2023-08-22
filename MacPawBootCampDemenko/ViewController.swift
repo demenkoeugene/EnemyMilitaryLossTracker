@@ -16,11 +16,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        self.title = "Personal Losses"
-
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
+        
+        
+//        title = "Personal Losses"
+//
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationItem.largeTitleDisplayMode = .always
         
         configureTableView()
         fetchData()
@@ -67,12 +68,9 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedResult = results[indexPath.row]
-        
-        let detailViewController = DetailViewController() // Initialize DetailViewController
-        detailViewController.selectedResult = selectedResult // Pass data
-        
-        print("navigationController:", navigationController) // Print the navigation controller
-        
+
+        let detailViewController = DetailViewController()
+        detailViewController.selectedResult = selectedResult
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
