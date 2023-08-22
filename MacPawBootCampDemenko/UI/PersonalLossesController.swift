@@ -7,7 +7,7 @@
 import CoreData
 import UIKit
 
-class ViewController: UIViewController {
+class PersonalLossesController: UIViewController {
     let context = PersistenceController.shared.container.viewContext
     var results: [PersonnelLosses] = []
     let searchController = UISearchController(searchResultsController: nil)
@@ -16,12 +16,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        title = "Personal Losses"
-//
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationItem.largeTitleDisplayMode = .always
         
         configureTableView()
         fetchData()
@@ -65,7 +59,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension PersonalLossesController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedResult = results[indexPath.row]
 
@@ -77,7 +71,7 @@ extension ViewController: UITableViewDelegate {
 
 
 
-extension ViewController: UITableViewDataSource {
+extension PersonalLossesController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }

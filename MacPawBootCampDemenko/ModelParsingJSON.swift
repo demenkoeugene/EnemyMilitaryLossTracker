@@ -63,6 +63,6 @@ struct MilitaryLossesModel: Decodable {
 
 struct DonationModel: Decodable{
     let name: String
-    let urlOrganization: String
+    let organisationURL: String
 }
 

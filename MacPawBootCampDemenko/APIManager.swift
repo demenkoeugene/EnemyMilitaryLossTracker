@@ -10,23 +10,23 @@ import CoreData
 
 class APIManager {
     static let shared = APIManager()
-
+    
     let personnelLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_personnel.json"
-
+    
     typealias CompletionHandler = (Error?) -> Void
-
+    
     func getPersonnelLosses(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         // Clear existing data if needed
         PersistenceController.shared.clear()
-
+        
         guard let url = URL(string: personnelLossesURL) else {
             print("Invalid server URL")
             completion(nil)
             return
         }
-
+        
         let session = URLSession.shared
-
+        
         session.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Network error:", error)
@@ -38,11 +38,11 @@ class APIManager {
                 completion(nil)
                 return
             }
-
+            
             do {
                 let personnelLosses: [PersonnelLossesModel] = try JSONDecoder().decode([PersonnelLossesModel].self, from: data)
                 print("Decoded personnel losses count:", personnelLosses.count)
-
+                
                 viewContext.perform {
                     for personnelLossesItem in personnelLosses {
                         let perslosses = PersonnelLosses(context: viewContext)
@@ -52,7 +52,7 @@ class APIManager {
                         perslosses.personnelInfo = personnelLossesItem.personnelInfo
                         perslosses.pow = Int32(personnelLossesItem.pow ?? 0)
                     }
-
+                    
                     do {
                         try viewContext.save()
                         let finalCount = try? viewContext.count(for: PersonnelLosses.fetchRequest())
@@ -64,14 +64,14 @@ class APIManager {
                         completion(error)
                     }
                 }
-               
+                
             } catch {
                 print("Decoding error:", error)
                 completion(error)
             }
         }.resume()
     }
-
+    
     
     let equipmentLossesOryxURL = "https://raw.githubusercontent.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset/5fc26df03f91acfe175bc856dbd4fd9e5b77ab09/data/russia_losses_equipment_oryx.json"
     let equipmentLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_equipment.json"
@@ -160,5 +160,27 @@ class APIManager {
             }
         }.resume()
     }
+    
+    
+    
+    func parseDonationJSON(completion: @escaping (Result<[DonationModel], Error>) -> Void) {
+           guard let path = Bundle.main.path(forResource: "donation", ofType: "json", inDirectory: "data") else {
+               completion(.failure(NSError(domain: "Donation data not found", code: 404, userInfo: nil)))
+               return
+           }
+           
+           let url = URL(fileURLWithPath: path)
+           
+           do {
+               let jsonData = try Data(contentsOf: url)
+               let decoder = JSONDecoder()
+               let donations = try decoder.decode([DonationModel].self, from: jsonData)
+               completion(.success(donations))
+           } catch {
+               completion(.failure(error))
+           }
+       }
+
+
 }
 

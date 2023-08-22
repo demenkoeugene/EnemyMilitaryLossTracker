@@ -11,11 +11,11 @@
 		F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F832A94AE59001F1693 /* CustomCell.swift */; };
 		F6808F862A94B83B001F1693 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F852A94B83B001F1693 /* DetailViewController.swift */; };
 		F6808F882A94CED8001F1693 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F872A94CED8001F1693 /* TabbarController.swift */; };
-		F6808F8A2A94CFAE001F1693 /* EquipmentLosses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F892A94CFAE001F1693 /* EquipmentLosses.swift */; };
+		F6808F8A2A94CFAE001F1693 /* EquipmentLossesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F892A94CFAE001F1693 /* EquipmentLossesController.swift */; };
 		F6808F8C2A94D4A3001F1693 /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F8B2A94D4A3001F1693 /* DonationViewController.swift */; };
 		F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774322A93F54900E689A9 /* AppDelegate.swift */; };
 		F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774342A93F54900E689A9 /* SceneDelegate.swift */; };
-		F6F774372A93F54900E689A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774362A93F54900E689A9 /* ViewController.swift */; };
+		F6F774372A93F54900E689A9 /* PersonalLossesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774362A93F54900E689A9 /* PersonalLossesController.swift */; };
 		F6F7743F2A93F54A00E689A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F7743E2A93F54A00E689A9 /* Assets.xcassets */; };
 		F6F7744D2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7744C2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift */; };
 		F6F774572A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774562A93F54A00E689A9 /* MacPawBootCampDemenkoUITests.swift */; };
@@ -55,12 +55,12 @@
 		F6808F832A94AE59001F1693 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F6808F852A94B83B001F1693 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F6808F872A94CED8001F1693 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
-		F6808F892A94CFAE001F1693 /* EquipmentLosses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLosses.swift; sourceTree = "<group>"; };
+		F6808F892A94CFAE001F1693 /* EquipmentLossesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLossesController.swift; sourceTree = "<group>"; };
 		F6808F8B2A94D4A3001F1693 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		F6F7742F2A93F54900E689A9 /* MacPawBootCampDemenko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPawBootCampDemenko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F774322A93F54900E689A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F774342A93F54900E689A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6F774362A93F54900E689A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6F774362A93F54900E689A9 /* PersonalLossesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalLossesController.swift; sourceTree = "<group>"; };
 		F6F7743E2A93F54A00E689A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6F774432A93F54A00E689A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F774482A93F54A00E689A9 /* MacPawBootCampDemenkoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPawBootCampDemenkoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6808F8D2A952F20001F1693 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F6808F892A94CFAE001F1693 /* EquipmentLossesController.swift */,
+				F6808F832A94AE59001F1693 /* CustomCell.swift */,
+				F6F774362A93F54900E689A9 /* PersonalLossesController.swift */,
+				F6808F812A94AD41001F1693 /* UIView.swift */,
+				F6808F852A94B83B001F1693 /* DetailViewController.swift */,
+				F6808F8B2A94D4A3001F1693 /* DonationViewController.swift */,
+				F6808F872A94CED8001F1693 /* TabbarController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		F6F774262A93F54900E689A9 = {
 			isa = PBXGroup;
 			children = (
@@ -129,19 +143,13 @@
 		F6F774312A93F54900E689A9 /* MacPawBootCampDemenko */ = {
 			isa = PBXGroup;
 			children = (
+				F6808F8D2A952F20001F1693 /* UI */,
 				F6F7746C2A93F7E500E689A9 /* data */,
 				F6F774692A93F7C100E689A9 /* DBModel */,
 				F6F774322A93F54900E689A9 /* AppDelegate.swift */,
 				F6F774342A93F54900E689A9 /* SceneDelegate.swift */,
 				F6F774672A93F7A400E689A9 /* APIManager.swift */,
 				F6F774652A93F79A00E689A9 /* ModelParsingJSON.swift */,
-				F6F774362A93F54900E689A9 /* ViewController.swift */,
-				F6808F852A94B83B001F1693 /* DetailViewController.swift */,
-				F6808F872A94CED8001F1693 /* TabbarController.swift */,
-				F6808F892A94CFAE001F1693 /* EquipmentLosses.swift */,
-				F6808F8B2A94D4A3001F1693 /* DonationViewController.swift */,
-				F6808F832A94AE59001F1693 /* CustomCell.swift */,
-				F6808F812A94AD41001F1693 /* UIView.swift */,
 				F6F7743E2A93F54A00E689A9 /* Assets.xcassets */,
 				F6F774432A93F54A00E689A9 /* Info.plist */,
 				F6F774892A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld */,
@@ -322,9 +330,9 @@
 				F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */,
 				F6F7746B2A93F7D100E689A9 /* PersistenceController.swift in Sources */,
 				F6F774662A93F79A00E689A9 /* ModelParsingJSON.swift in Sources */,
-				F6F774372A93F54900E689A9 /* ViewController.swift in Sources */,
+				F6F774372A93F54900E689A9 /* PersonalLossesController.swift in Sources */,
 				F6808F822A94AD41001F1693 /* UIView.swift in Sources */,
-				F6808F8A2A94CFAE001F1693 /* EquipmentLosses.swift in Sources */,
+				F6808F8A2A94CFAE001F1693 /* EquipmentLossesController.swift in Sources */,
 				F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */,
 				F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */,
 				F6F774852A9404F900E689A9 /* EquipmentLossesOryx+CoreDataClass.swift in Sources */,

@@ -1,43 +1,42 @@
 [
-    {
-        "name": "Повернись живим",
-        "organisationURL": "https://savelife.in.ua/donate/"
-    },
-    {
-        "name": "Благодійний фонд Сергія Притули",
-        "organisationURL": "https://prytulafoundation.org/donation"
-    },
-    {
-        "name": "Razom for Ukraine",
-        "organisationURL": "https://www.razomforukraine.org/donate/"
-    },
-    {
-        "name": "UNITED 24",
-        "organisationURL": "https://u24.gov.ua/uk"
-    },
-    {
-        "name": "KSE Foundation",
-        "organisationURL": "https://foundation.kse.ua/?form=FUNDALUZUGZ"
-    },
-    {
-        "name": "КОЛО",
-        "organisationURL": "https://www.koloua.com"
-    },
-    {
-        "name": "Армія SOS",
-        "organisationURL": "https://armysos.com.ua/uk/vnesok/"
-    },
-    {
-        "name": "Зграя",
-        "organisationURL": "https://zgraya-help.com"
-    },
-    {
-        "name": "Український католицький університет",
-        "organisationURL": "https://warinua.ucu.edu.ua"
-    },
-    {
-        "name": "Корпорація монстрів",
-        "organisationURL": "https://monstrov.org/donate/"
-    }
+  {
+    "name": "Повернись живим",
+    "organisationURL": "https://savelife.in.ua/donate/"
+  },
+  {
+    "name": "Благодійний фонд Сергія Притули",
+    "organisationURL": "https://prytulafoundation.org/donation"
+  },
+  {
+    "name": "Razom for Ukraine",
+    "organisationURL": "https://www.razomforukraine.org/donate/"
+  },
+  {
+    "name": "UNITED 24",
+    "organisationURL": "https://u24.gov.ua/uk"
+  },
+  {
+    "name": "KSE Foundation",
+    "organisationURL": "https://foundation.kse.ua/?form=FUNDALUZUGZ"
+  },
+  {
+    "name": "КОЛО",
+    "organisationURL": "https://www.koloua.com"
+  },
+  {
+    "name": "Армія SOS",
+    "organisationURL": "https://armysos.com.ua/uk/vnesok/"
+  },
+  {
+    "name": "Зграя",
+    "organisationURL": "https://zgraya-help.com"
+  },
+  {
+    "name": "Український католицький університет",
+    "organisationURL": "https://warinua.ucu.edu.ua"
+  },
+  {
+    "name": "Корпорація монстрів",
+    "organisationURL": "https://monstrov.org/donate/"
+  }
 ]
-
