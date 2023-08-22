@@ -1,6 +1,6 @@
 //
 //  EquipmentLossesOryx+CoreDataProperties.swift
-//  MacPawBootcamp
+//  MacPawBootCampDemenko
 //
 //  Created by Eugene Demenko on 21.08.2023.
 //
@@ -17,10 +17,10 @@ extension EquipmentLossesOryx {
     }
 
     @NSManaged public var equipmentOryx: String?
-    @NSManaged public var model: String?
-    @NSManaged public var manufacturer: String?
-    @NSManaged public var lossesTotal: Int32
     @NSManaged public var equipmentUA: String?
+    @NSManaged public var lossesTotal: Int32
+    @NSManaged public var manufacturer: String?
+    @NSManaged public var model: String?
 
 }
 

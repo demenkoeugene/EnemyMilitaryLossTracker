@@ -1,6 +1,6 @@
 //
 //  PersonnelLosses+CoreDataProperties.swift
-//  MacPawBootcamp
+//  MacPawBootCampDemenko
 //
 //  Created by Eugene Demenko on 21.08.2023.
 //

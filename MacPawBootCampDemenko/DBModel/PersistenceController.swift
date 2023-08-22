@@ -14,7 +14,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init() {
-        container = NSPersistentContainer(name: "MacPawBootcamp")
+        container = NSPersistentContainer(name: "MacPawBootCampDemenko")
         container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         container.loadPersistentStores(completionHandler: {_,_ in })
         container.viewContext.automaticallyMergesChangesFromParent = true
