@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6724DA82A964B260023D03E /* MilitaryLosses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DA62A964B260023D03E /* MilitaryLosses+CoreDataClass.swift */; };
+		F6724DA92A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DA72A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift */; };
 		F6808F822A94AD41001F1693 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F812A94AD41001F1693 /* UIView.swift */; };
 		F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F832A94AE59001F1693 /* CustomCell.swift */; };
 		F6808F862A94B83B001F1693 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F852A94B83B001F1693 /* DetailViewController.swift */; };
@@ -26,10 +28,6 @@
 		F6F7746D2A93F7E500E689A9 /* data in Resources */ = {isa = PBXBuildFile; fileRef = F6F7746C2A93F7E500E689A9 /* data */; };
 		F6F774832A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7747D2A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift */; };
 		F6F774842A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7747E2A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift */; };
-		F6F774852A9404F900E689A9 /* EquipmentLossesOryx+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7747F2A9404F900E689A9 /* EquipmentLossesOryx+CoreDataClass.swift */; };
-		F6F774862A9404F900E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774802A9404F900E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift */; };
-		F6F774872A9404F900E689A9 /* MilitaryLosses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774812A9404F900E689A9 /* MilitaryLosses+CoreDataClass.swift */; };
-		F6F774882A9404F900E689A9 /* MilitaryLosses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774822A9404F900E689A9 /* MilitaryLosses+CoreDataProperties.swift */; };
 		F6F7748B2A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6F774892A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6724DA62A964B260023D03E /* MilitaryLosses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6724DA72A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6808F812A94AD41001F1693 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F6808F832A94AE59001F1693 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F6808F852A94B83B001F1693 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -74,10 +74,6 @@
 		F6F7746C2A93F7E500E689A9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		F6F7747D2A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonnelLosses+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6F7747E2A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonnelLosses+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F6F7747F2A9404F900E689A9 /* EquipmentLossesOryx+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryx+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F6F774802A9404F900E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryx+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F6F774812A9404F900E689A9 /* MilitaryLosses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F6F774822A9404F900E689A9 /* MilitaryLosses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6F7748A2A9405E200E689A9 /* MacPawBootcamp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPawBootcamp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,10 +175,8 @@
 			children = (
 				F6F7747D2A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift */,
 				F6F7747E2A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift */,
-				F6F7747F2A9404F900E689A9 /* EquipmentLossesOryx+CoreDataClass.swift */,
-				F6F774802A9404F900E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift */,
-				F6F774812A9404F900E689A9 /* MilitaryLosses+CoreDataClass.swift */,
-				F6F774822A9404F900E689A9 /* MilitaryLosses+CoreDataProperties.swift */,
+				F6724DA62A964B260023D03E /* MilitaryLosses+CoreDataClass.swift */,
+				F6724DA72A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift */,
 				F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */,
 			);
 			path = DBModel;
@@ -322,20 +316,18 @@
 				F6F774682A93F7A400E689A9 /* APIManager.swift in Sources */,
 				F6F774842A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift in Sources */,
 				F6F774832A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift in Sources */,
-				F6F774862A9404F900E689A9 /* EquipmentLossesOryx+CoreDataProperties.swift in Sources */,
 				F6808F8C2A94D4A3001F1693 /* DonationViewController.swift in Sources */,
-				F6F774882A9404F900E689A9 /* MilitaryLosses+CoreDataProperties.swift in Sources */,
-				F6F774872A9404F900E689A9 /* MilitaryLosses+CoreDataClass.swift in Sources */,
 				F6808F862A94B83B001F1693 /* DetailViewController.swift in Sources */,
 				F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */,
 				F6F7746B2A93F7D100E689A9 /* PersistenceController.swift in Sources */,
 				F6F774662A93F79A00E689A9 /* ModelParsingJSON.swift in Sources */,
+				F6724DA82A964B260023D03E /* MilitaryLosses+CoreDataClass.swift in Sources */,
 				F6F774372A93F54900E689A9 /* PersonalLossesController.swift in Sources */,
 				F6808F822A94AD41001F1693 /* UIView.swift in Sources */,
 				F6808F8A2A94CFAE001F1693 /* EquipmentLossesController.swift in Sources */,
 				F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */,
+				F6724DA92A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift in Sources */,
 				F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */,
-				F6F774852A9404F900E689A9 /* EquipmentLossesOryx+CoreDataClass.swift in Sources */,
 				F6808F882A94CED8001F1693 /* TabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

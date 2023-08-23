@@ -2,7 +2,7 @@
 //  MilitaryLosses+CoreDataClass.swift
 //  MacPawBootCampDemenko
 //
-//  Created by Eugene Demenko on 21.08.2023.
+//  Created by Eugene Demenko on 23.08.2023.
 //
 //
 
