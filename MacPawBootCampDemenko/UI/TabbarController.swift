@@ -12,9 +12,9 @@ class TabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        
         self.setupTabs()
-
+        
     }
     
     
@@ -42,6 +42,10 @@ class TabbarController: UITabBarController {
         nav.viewControllers.first?.navigationItem.title = title
         nav.navigationBar.prefersLargeTitles = true
         nav.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+        
+        // Add a fixed space bar button item to create space between tab bar items
+        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        fixedSpace.width = 20 // Adjust the value to control the spacing
         
         
         return nav

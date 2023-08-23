@@ -75,9 +75,7 @@ class APIManager {
     
     let equipmentLossesOryxURL = "https://raw.githubusercontent.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset/5fc26df03f91acfe175bc856dbd4fd9e5b77ab09/data/russia_losses_equipment_oryx.json"
     let equipmentLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_equipment.json"
-    let equipmentLossesURLCorrection = "https://raw.githubusercontent.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset/5fc26df03f91acfe175bc856dbd4fd9e5b77ab09/data/russia_losses_equipment_correction.json"
-    
-    
+  
     func getEquipmentLossesOryx(){
         guard let url = URL(string: equipmentLossesOryxURL) else{
             print("Invalid server URL")
@@ -134,34 +132,8 @@ class APIManager {
         
     }
     
-    func getEquipmentLossesCorrection(){
-        guard let url = URL(string: equipmentLossesURLCorrection) else{
-            print("Invalid server URL")
-            return
-        }
-        
-        let session = URLSession.shared
-        
-        session.dataTask(with: url){ data,response, error in
-            if let error = error{
-                print(error)
-                return
-            }
-            guard let data = data else {
-                print("No data received")
-                return
-                
-            }
-            do {
-                let militaryLosses: [MilitaryLossesModel] = try JSONDecoder().decode([MilitaryLossesModel].self, from: data)
-                print(militaryLosses.count)
-            } catch {
-                print("Decoding error:", error)
-            }
-        }.resume()
-    }
-    
-    
+   
+
     
     func parseDonationJSON(completion: @escaping (Result<[DonationModel], Error>) -> Void) {
            guard let path = Bundle.main.path(forResource: "donation", ofType: "json", inDirectory: "data") else {
