@@ -8,6 +8,21 @@
 import UIKit
 import CoreData
 
+struct Labels {
+    let dayLabel = UILabel()
+    let aircraftLabel = UILabel()
+    let helicopterLabel = UILabel()
+    let tankLabel = UILabel()
+    let APCLabel = UILabel()
+    let fieldArtilleryLabel = UILabel()
+    let MRLLabel = UILabel()
+    let militaryAutoLabel = UILabel()
+    let fuelTankLabel = UILabel()
+    let droneLabel = UILabel()
+    let navalShipLabel = UILabel()
+    let antiAircraftWarfareLabel = UILabel()
+}
+
 class EquipmentLossesController: UIViewController {
     
     let context = PersistenceController.shared.container.viewContext
@@ -22,13 +37,14 @@ class EquipmentLossesController: UIViewController {
         return label
     }()
     
+    var labels = Labels()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         fetchData {
             // This block will be executed after data fetching and sorting are done
-            // You can place the code that depends on the fetched data here
             let currentDate = self.results.first?.date ?? Date() // Get the current date
             print("current date \(currentDate)")
             self.fetchMilitaryLosses(for: currentDate) // Fetch data for the current date
@@ -38,6 +54,7 @@ class EquipmentLossesController: UIViewController {
         createDataPicker()
         // Add dataLabel to the view hierarchy
         view.addSubview(dataLabel)
+        setupLabelConstraints()
         
         // Configure Auto Layout constraints for the label
         NSLayoutConstraint.activate([
@@ -46,6 +63,40 @@ class EquipmentLossesController: UIViewController {
             dataLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             dataLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
+    }
+    
+    
+    private func setupLabelConstraints() {
+        let labelArray = [
+            labels.dayLabel,
+            labels.aircraftLabel,
+            labels.helicopterLabel,
+            labels.tankLabel,
+            labels.APCLabel,
+            labels.fieldArtilleryLabel,
+            labels.MRLLabel,
+            labels.militaryAutoLabel,
+            labels.fuelTankLabel,
+            labels.droneLabel,
+            labels.navalShipLabel,
+            labels.antiAircraftWarfareLabel
+        ]
+        
+        for (index, label) in labelArray.enumerated() {
+            label.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(label)
+            
+            // Configure Auto Layout constraints for the label
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+            if index == 0 {
+                // Position the first label below the data picker
+                label.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 16).isActive = true
+            } else {
+                // Position subsequent labels below the previous label
+                let previousLabel = labelArray[index - 1]
+                label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: 16).isActive = true
+            }
+        }
     }
     
     
@@ -74,8 +125,6 @@ class EquipmentLossesController: UIViewController {
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
     }
     
-    
-    
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
         let selectedDate = sender.date
         print("Selected date:", selectedDate)
@@ -90,23 +139,35 @@ class EquipmentLossesController: UIViewController {
         
         // Find the military loss entry that matches the selected date
         if let militaryLoss = results.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
-            let formattedLossData = """
-            Day: \(militaryLoss.day)
-            Aircraft: \(militaryLoss.aircraft)
-            Helicopter: \(militaryLoss.helicopter)
-            Tank: \(militaryLoss.tank)
-            APC: \(militaryLoss.apc)
-            Field Artillery: \(militaryLoss.fieldArtillery)
-            MRL: \(militaryLoss.mrl)
-            Military Auto: \(militaryLoss.militaryAuto)
-            Fuel Tank: \(militaryLoss.fuelTank)
-            Drone: \(militaryLoss.drone)
-            Naval Ship: \(militaryLoss.navalShip)
-            Anti-Aircraft Warfare: \(militaryLoss.antiAircraftWarfare)
-            """
-            dataLabel.text = formattedLossData
-            dataLabel.layoutIfNeeded() // Force layout update
+            labels.dayLabel.text = "Day: \(militaryLoss.day)"
+            labels.aircraftLabel.text = "Aircraft: \(militaryLoss.aircraft)"
+            labels.helicopterLabel.text = "Helicopter: \(militaryLoss.helicopter)"
+            labels.tankLabel.text = "Tank: \(militaryLoss.tank)"
+            labels.APCLabel.text = "APC: \(militaryLoss.apc)"
+            labels.fieldArtilleryLabel.text = "Field Artillery: \(militaryLoss.fieldArtillery)"
+            labels.MRLLabel.text = "MRL: \(militaryLoss.mrl)"
+            labels.militaryAutoLabel.text = "Military Auto: \(militaryLoss.militaryAuto)"
+            labels.fuelTankLabel.text = "Fuel Tank: \(militaryLoss.fuelTank)"
+            labels.droneLabel.text = "Drone: \(militaryLoss.drone)"
+            labels.navalShipLabel.text = "Naval Ship: \(militaryLoss.navalShip)"
+            labels.antiAircraftWarfareLabel.text = "Anti-Aircraft Warfare: \(militaryLoss.antiAircraftWarfare)"
+            dataLabel.text = ""
         } else {
+            // Clear the text of all labels
+            labels.dayLabel.text = ""
+            labels.aircraftLabel.text = ""
+            labels.helicopterLabel.text = ""
+            labels.tankLabel.text = ""
+            labels.APCLabel.text = ""
+            labels.fieldArtilleryLabel.text = ""
+            labels.MRLLabel.text = ""
+            labels.militaryAutoLabel.text = ""
+            labels.fuelTankLabel.text = ""
+            labels.droneLabel.text = ""
+            labels.navalShipLabel.text = ""
+            labels.antiAircraftWarfareLabel.text = ""
+            
+            
             dataLabel.text = "No data available for the selected date."
         }
     }
