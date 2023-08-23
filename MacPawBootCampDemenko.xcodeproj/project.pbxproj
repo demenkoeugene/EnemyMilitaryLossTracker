@@ -139,13 +139,13 @@
 		F6F774312A93F54900E689A9 /* MacPawBootCampDemenko */ = {
 			isa = PBXGroup;
 			children = (
-				F6808F8D2A952F20001F1693 /* UI */,
 				F6F7746C2A93F7E500E689A9 /* data */,
-				F6F774692A93F7C100E689A9 /* DBModel */,
+				F6808F8D2A952F20001F1693 /* UI */,
 				F6F774322A93F54900E689A9 /* AppDelegate.swift */,
 				F6F774342A93F54900E689A9 /* SceneDelegate.swift */,
 				F6F774672A93F7A400E689A9 /* APIManager.swift */,
 				F6F774652A93F79A00E689A9 /* ModelParsingJSON.swift */,
+				F6F774692A93F7C100E689A9 /* DBModel */,
 				F6F7743E2A93F54A00E689A9 /* Assets.xcassets */,
 				F6F774432A93F54A00E689A9 /* Info.plist */,
 				F6F774892A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld */,

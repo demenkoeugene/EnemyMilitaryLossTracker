@@ -138,20 +138,46 @@ class EquipmentLossesController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         // Find the military loss entry that matches the selected date
-        if let militaryLoss = results.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
-            labels.dayLabel.text = "Day: \(militaryLoss.day)"
-            labels.aircraftLabel.text = "Aircraft: \(militaryLoss.aircraft)"
-            labels.helicopterLabel.text = "Helicopter: \(militaryLoss.helicopter)"
-            labels.tankLabel.text = "Tank: \(militaryLoss.tank)"
-            labels.APCLabel.text = "APC: \(militaryLoss.apc)"
-            labels.fieldArtilleryLabel.text = "Field Artillery: \(militaryLoss.fieldArtillery)"
-            labels.MRLLabel.text = "MRL: \(militaryLoss.mrl)"
-            labels.militaryAutoLabel.text = "Military Auto: \(militaryLoss.militaryAuto)"
-            labels.fuelTankLabel.text = "Fuel Tank: \(militaryLoss.fuelTank)"
-            labels.droneLabel.text = "Drone: \(militaryLoss.drone)"
-            labels.navalShipLabel.text = "Naval Ship: \(militaryLoss.navalShip)"
-            labels.antiAircraftWarfareLabel.text = "Anti-Aircraft Warfare: \(militaryLoss.antiAircraftWarfare)"
-            dataLabel.text = ""
+        if let currentMilitaryLoss = results.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
+            if let previousMilitaryLoss = results.first(where: { $0.date == Calendar.current.date(byAdding: .day, value: -1, to: date) }) {
+                // Calculate the change in values
+                let aircraftChange = currentMilitaryLoss.aircraft - previousMilitaryLoss.aircraft
+                let helicopterChange = currentMilitaryLoss.helicopter - previousMilitaryLoss.helicopter
+                let tankChange = currentMilitaryLoss.tank - previousMilitaryLoss.tank
+                let APCChange = currentMilitaryLoss.apc - previousMilitaryLoss.apc
+                let fieldArtilleryChange = currentMilitaryLoss.fieldArtillery - previousMilitaryLoss.fieldArtillery
+                let MRLChange = currentMilitaryLoss.mrl - previousMilitaryLoss.mrl
+                let militaryAutoChange = currentMilitaryLoss.militaryAuto - previousMilitaryLoss.militaryAuto
+                let fuelTankChange = currentMilitaryLoss.fuelTank - previousMilitaryLoss.fuelTank
+                let droneChange = currentMilitaryLoss.drone - previousMilitaryLoss.drone
+                let navalShipChange = currentMilitaryLoss.navalShip - previousMilitaryLoss.navalShip
+                let antiAircraftWarfareShipChange = currentMilitaryLoss.antiAircraftWarfare - previousMilitaryLoss.antiAircraftWarfare
+                
+                // Display current day's values along with changes
+                labels.dayLabel.text = "Day: \(currentMilitaryLoss.day)"
+                labels.aircraftLabel.text = "Aircraft: \(currentMilitaryLoss.aircraft) \(aircraftChange != 0 ? "(\(aircraftChange > 0 ? "+" : "")\(aircraftChange))" : "")"
+                labels.helicopterLabel.text = "Helicopter: \(currentMilitaryLoss.helicopter) \(helicopterChange != 0 ? "(\(helicopterChange > 0 ? "+" : "")\(helicopterChange))" : "")"
+                
+                labels.tankLabel.text = "Tank: \(currentMilitaryLoss.tank) \(tankChange != 0 ? "(\(tankChange > 0 ? "+" : "")\(tankChange))" : "")"
+                
+                labels.APCLabel.text  = "APC: \(currentMilitaryLoss.apc) \(APCChange != 0 ? "(\(APCChange > 0 ? "+" : "")\(APCChange))" : "")"
+                
+                labels.fieldArtilleryLabel.text = "Field Artillery: \(currentMilitaryLoss.fieldArtillery) \(fieldArtilleryChange != 0 ? "(\(fieldArtilleryChange > 0 ? "+" : "")\(fieldArtilleryChange))" : "")"
+                
+                labels.MRLLabel.text = "MRL: \(currentMilitaryLoss.mrl) \(MRLChange != 0 ? "(\(MRLChange > 0 ? "+" : "")\(MRLChange))" : "")"
+                
+                labels.militaryAutoLabel.text = "Military Auto: \(currentMilitaryLoss.militaryAuto) \(militaryAutoChange != 0 ? "(\(militaryAutoChange > 0 ? "+" : "")\(militaryAutoChange))" : "")"
+                
+                labels.fuelTankLabel.text = "Fuel Tank: \(currentMilitaryLoss.fuelTank) \(fuelTankChange != 0 ? "(\(fuelTankChange > 0 ? "+" : "")\(fuelTankChange))" : "")"
+                
+                labels.droneLabel.text = "Drone: \(currentMilitaryLoss.drone) \(droneChange != 0 ? "(\(droneChange > 0 ? "+" : "")\(droneChange))" : "")"
+                
+                labels.navalShipLabel.text = "Naval Ship: \(currentMilitaryLoss.navalShip)  \(navalShipChange != 0 ? "(\(navalShipChange > 0 ? "+" : "")\(navalShipChange))" : "")"
+                
+                labels.antiAircraftWarfareLabel.text = "Anti-Aircraft Warfare: \(currentMilitaryLoss.antiAircraftWarfare)  \(antiAircraftWarfareShipChange != 0 ? "(\(antiAircraftWarfareShipChange > 0 ? "+" : "")\(antiAircraftWarfareShipChange))" : "")"
+                
+                dataLabel.text = ""
+            }
         } else {
             // Clear the text of all labels
             labels.dayLabel.text = ""
