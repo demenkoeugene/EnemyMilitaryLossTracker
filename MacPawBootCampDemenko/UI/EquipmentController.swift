@@ -82,8 +82,11 @@ extension EquipmentController: UITableViewDelegate {
    
     
     func updateSearchResults(for searchController: UISearchController) {
-        print("hello")
-    }
+           if let searchText = searchController.searchBar.text?.lowercased() {
+//               categoriesEquipment.filter(with: searchText)
+               tableView.reloadData()
+           }
+       }
 }
 
 
@@ -118,97 +121,6 @@ extension EquipmentController: UITableViewDataSource  {
 
 
 
-struct Equipment {
-    var antiAircraftGuns: [EquipmentLossesOryx] = []
-    var jammersAndDeceptionSystems: [EquipmentLossesOryx] = []
-    var commandPostsAndCommunicationsStations: [EquipmentLossesOryx] = []
-    var multipleRocketLaunchers: [EquipmentLossesOryx] = []
-    var surfaceToAirMissileSystems: [EquipmentLossesOryx] = []
-    var trucksVehiclesAndJeeps: [EquipmentLossesOryx] = []
-    var armouredFightingVehicles: [EquipmentLossesOryx] = []
-    var selfPropelledAntiTankMissileSystems: [EquipmentLossesOryx] = []
-    var mineResistantAmbushProtected: [EquipmentLossesOryx] = []
-    var aircraft: [EquipmentLossesOryx] = []
-    var selfPropelledAntiAircraftGuns: [EquipmentLossesOryx] = []
-    var infantryMobilityVehicles: [EquipmentLossesOryx] = []
-    var selfPropelledArtillery: [EquipmentLossesOryx] = []
-    var towedArtillery: [EquipmentLossesOryx] = []
-    var tanks: [EquipmentLossesOryx] = []
-    var artillerySupportVehiclesAndEquipment: [EquipmentLossesOryx] = []
-    var helicopters: [EquipmentLossesOryx] = []
-    var navalShips: [EquipmentLossesOryx] = []
-    var radars: [EquipmentLossesOryx] = []
-    var reconnaissanceUnmannedAerialVehicles: [EquipmentLossesOryx] = []
-    var infantryFightingVehicles: [EquipmentLossesOryx] = []
-    var unmannedCombatAerialVehicles: [EquipmentLossesOryx] = []
-    var engineeringVehiclesAndEquipment: [EquipmentLossesOryx] = []
-    var armouredPersonnelCarriers: [EquipmentLossesOryx] = []
-    
-    init(equipment: [EquipmentLossesOryx]) {
-        self.antiAircraftGuns = filterEquipment(equipment, categoryName: "Anti-Aircraft Guns")
-        self.jammersAndDeceptionSystems = filterEquipment(equipment, categoryName: "Jammers And Deception Systems")
-        self.commandPostsAndCommunicationsStations = filterEquipment(equipment, categoryName: "Command Posts And Communications Stations")
-        self.multipleRocketLaunchers = filterEquipment(equipment, categoryName: "Multiple Rocket Launchers")
-        self.surfaceToAirMissileSystems = filterEquipment(equipment, categoryName: "Surface-To-Air Missile Systems")
-        self.trucksVehiclesAndJeeps = filterEquipment(equipment, categoryName: "Trucks, Vehicles and Jeeps")
-        self.armouredFightingVehicles = filterEquipment(equipment, categoryName: "Armoured Fighting Vehicles")
-        self.selfPropelledAntiTankMissileSystems = filterEquipment(equipment, categoryName: "Self-Propelled Anti-Tank Missile Systems")
-        self.mineResistantAmbushProtected = filterEquipment(equipment, categoryName: "Mine-Resistant Ambush Protected")
-        self.aircraft = filterEquipment(equipment, categoryName: "Aircraft")
-        self.selfPropelledAntiAircraftGuns = filterEquipment(equipment, categoryName: "Self-Propelled Anti-Aircraft Guns")
-        self.infantryMobilityVehicles = filterEquipment(equipment, categoryName: "Infantry Mobility Vehicles")
-        self.selfPropelledArtillery = filterEquipment(equipment, categoryName: "Self-Propelled Artillery")
-        self.towedArtillery = filterEquipment(equipment, categoryName: "Towed Artillery")
-        self.tanks = filterEquipment(equipment, categoryName: "Tanks")
-        self.artillerySupportVehiclesAndEquipment = filterEquipment(equipment, categoryName: "Artillery Support Vehicles And Equipment")
-        self.helicopters = filterEquipment(equipment, categoryName: "Helicopters")
-        self.navalShips = filterEquipment(equipment, categoryName: "Naval Ships")
-        self.radars = filterEquipment(equipment, categoryName: "Radars")
-        self.reconnaissanceUnmannedAerialVehicles = filterEquipment(equipment, categoryName: "Reconnaissance Unmanned Aerial Vehicles")
-        self.infantryFightingVehicles = filterEquipment(equipment, categoryName: "Infantry Fighting Vehicles")
-        self.unmannedCombatAerialVehicles = filterEquipment(equipment, categoryName: "Unmanned Combat Aerial Vehicles")
-        self.engineeringVehiclesAndEquipment = filterEquipment(equipment, categoryName: "Engineering Vehicles And Equipment")
-        self.armouredPersonnelCarriers = filterEquipment(equipment, categoryName: "Armoured Personnel Carriers")
-    }
-    init(){
-    }
-    
-    // Private function for filtering equipment based on category name
-    private func filterEquipment(_ equipment: [EquipmentLossesOryx], categoryName: String) -> [EquipmentLossesOryx] {
-        return equipment.filter { $0.equipmentOryx == categoryName }
-    }
-}
-
-extension Equipment {
-    var allArrays: [(title: String, equipment: [EquipmentLossesOryx])] {
-        [
-            ("Anti-Aircraft Guns", antiAircraftGuns),
-            ("Jammers And Deception Systems", jammersAndDeceptionSystems),
-            ("Command Posts And Communications Stations", commandPostsAndCommunicationsStations),
-            ("Multiple Rocket Launchers", multipleRocketLaunchers),
-            ("Surface-To-Air Missile Systems", surfaceToAirMissileSystems),
-            ("Trucks, Vehicles and Jeeps", trucksVehiclesAndJeeps),
-            ("Armoured Fighting Vehicles", armouredFightingVehicles),
-            ("Self-Propelled Anti-Tank Missile Systems", selfPropelledAntiTankMissileSystems),
-            ("Mine-Resistant Ambush Protected", mineResistantAmbushProtected),
-            ("Aircraft", aircraft),
-            ("Self-Propelled Anti-Aircraft Guns", selfPropelledAntiAircraftGuns),
-            ("Infantry Mobility Vehicles", infantryMobilityVehicles),
-            ("Self-Propelled Artillery", selfPropelledArtillery),
-            ("Towed Artillery", towedArtillery),
-            ("Tanks", tanks),
-            ("Artillery Support Vehicles And Equipment", artillerySupportVehiclesAndEquipment),
-            ("Helicopters", helicopters),
-            ("Naval Ships", navalShips),
-            ("Radars", radars),
-            ("Reconnaissance Unmanned Aerial Vehicles", reconnaissanceUnmannedAerialVehicles),
-            ("Infantry Fighting Vehicles", infantryFightingVehicles),
-            ("Unmanned Combat Aerial Vehicles", unmannedCombatAerialVehicles),
-            ("Engineering Vehicles And Equipment", engineeringVehiclesAndEquipment),
-            ("Armoured Personnel Carriers", armouredPersonnelCarriers)
-        ]
-    }
-}
 
 
 
