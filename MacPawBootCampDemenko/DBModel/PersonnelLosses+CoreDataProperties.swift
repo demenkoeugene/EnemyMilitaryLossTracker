@@ -16,7 +16,7 @@ extension PersonnelLosses {
         return NSFetchRequest<PersonnelLosses>(entityName: "PersonnelLosses")
     }
 
-    @NSManaged public var date: String?
+    @NSManaged public var date: Date
     @NSManaged public var day: Int64
     @NSManaged public var personnel: Int32
     @NSManaged public var personnelInfo: String?

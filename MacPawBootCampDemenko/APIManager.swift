@@ -11,9 +11,11 @@ import CoreData
 class APIManager {
     static let shared = APIManager()
     
-    let personnelLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_personnel.json"
-    
     typealias CompletionHandler = (Error?) -> Void
+    
+    
+    // MARK: - Getting personnel loss data from JSON
+    let personnelLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_personnel.json"
     
     func getPersonnelLosses(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         // Clear existing data if needed
@@ -46,7 +48,16 @@ class APIManager {
                 viewContext.perform {
                     for personnelLossesItem in personnelLosses {
                         let perslosses = PersonnelLosses(context: viewContext)
-                        perslosses.date = personnelLossesItem.date
+                        // Create a date formatter to parse dates in "yyyy-MM-dd" format
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd"
+                
+                        // Convert the formatted string to a Date object
+                        if let formattedDate = dateFormatter.date(from: personnelLossesItem.date) {
+                            perslosses.date = formattedDate
+                        } else {
+                            print("Failed to convert the actual date string to a Date.")
+                        }
                         perslosses.day = Int64(personnelLossesItem.day)
                         perslosses.personnel = Int32(personnelLossesItem.personnel)
                         perslosses.personnelInfo = personnelLossesItem.personnelInfo
@@ -75,36 +86,69 @@ class APIManager {
     
     let equipmentLossesOryxURL = "https://raw.githubusercontent.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset/5fc26df03f91acfe175bc856dbd4fd9e5b77ab09/data/russia_losses_equipment_oryx.json"
     
-    func getEquipmentLossesOryx(){
-        guard let url = URL(string: equipmentLossesOryxURL) else{
+    func getEquipmentLossesOryx(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler){
+        // Clear existing data if needed
+        PersistenceController.shared.clear()
+        
+        guard let url = URL(string: equipmentLossesOryxURL) else {
             print("Invalid server URL")
+            completion(nil)
             return
         }
         
         let session = URLSession.shared
         
-        session.dataTask(with: url){ data,response, error in
-            if let error = error{
-                print(error)
+        session.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Network error:", error)
+                completion(error)
                 return
             }
             guard let data = data else {
                 print("No data received")
+                completion(nil)
                 return
-                
             }
+            
             do {
-                let equipmentLossesOryx: [EquipmentLossesOryxModel] = try JSONDecoder().decode([EquipmentLossesOryxModel].self, from: data)
-                print(equipmentLossesOryx.count)
+                let oryxData: [EquipmentLossesOryxModel] = try JSONDecoder().decode([EquipmentLossesOryxModel].self, from: data)
+                print("Decoded personnel losses count:", oryxData.count)
+                
+                viewContext.perform {
+                    for oryxDataItem in oryxData {
+                        let oryxdatacore = EquipmentLossesOryx(context: viewContext)
+                      
+                        oryxdatacore.equipmentOryx = oryxDataItem.equipmentOryx
+                        oryxdatacore.model = oryxDataItem.model
+                        oryxdatacore.manufacturer = oryxDataItem.manufacturer
+                        oryxdatacore.lossesTotal =  Int32(oryxDataItem.lossesTotal)
+                        oryxdatacore.equipmentUA = oryxDataItem.equipmentUA
+                    }
+                    
+                    do {
+                        try viewContext.save()
+                        let finalCount = try? viewContext.count(for: EquipmentLossesOryx.fetchRequest())
+                        print("Final Count:", finalCount ?? "N/A")
+                        completion(nil)
+                        
+                    } catch {
+                        print("Error saving context: \(error)")
+                        completion(error)
+                    }
+                }
+                
             } catch {
                 print("Decoding error:", error)
+                completion(error)
             }
         }.resume()
-        
     }
     
+    
+    
+    // MARK: - Getting equipment loss data from JSON
     let equipmentLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_equipment.json"
-  
+    
     func getEquipmentLosses(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         // Clear existing data if needed
         PersistenceController.shared.clear()

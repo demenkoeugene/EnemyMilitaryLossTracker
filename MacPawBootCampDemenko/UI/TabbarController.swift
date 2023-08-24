@@ -19,16 +19,17 @@ class TabbarController: UITabBarController {
     
     
     private func setupTabs(){
-        let personalLosses = self.createNav(with: "Personal Losses",
-                                            imageName: "imgPersLose",
-                                            vc: PersonalLossesController())
-        let equipmentLosses = self.createNav(with: "Equipment Losses",
-                                             imageName: "rocket",
-                                             vc: EquipmentLossesController())
+        let equipmentLosses = self.createNav(with: "Losses",
+                                             imageName: "imgPersLose",
+                                             vc: LossesController())
+        
+        let personalLosses = self.createNav(with: "Equipment Losses",
+                                            imageName: "rocket",
+                                            vc: EquipmentController())
         let donation = self.createNav(with: "Donation",
                                       imageName: "UkraineTrident",
                                       vc: DonationViewController())
-        self.setViewControllers([personalLosses, equipmentLosses,donation], animated: true)
+        self.setViewControllers([equipmentLosses, personalLosses,donation], animated: true)
     }
     
     private func createNav(with title: String, imageName: String, vc: UIViewController) -> UINavigationController{

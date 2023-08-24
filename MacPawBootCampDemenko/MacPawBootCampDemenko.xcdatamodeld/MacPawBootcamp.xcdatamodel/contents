@@ -23,7 +23,7 @@
         <attribute name="tank" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="PersonnelLosses" representedClassName=".PersonnelLosses" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="day" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="personnel" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="personnelInfo" optional="YES" attributeType="String"/>

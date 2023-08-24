@@ -23,7 +23,7 @@ struct Labels {
     let antiAircraftWarfareLabel = UILabel()
 }
 
-class EquipmentLossesController: UIViewController {
+class LossesController: UIViewController {
     
     let context = PersistenceController.shared.container.viewContext
     var results: [MilitaryLosses] = []
@@ -175,7 +175,7 @@ class EquipmentLossesController: UIViewController {
                 labels.navalShipLabel.text = "Naval Ship: \(currentMilitaryLoss.navalShip)  \(navalShipChange != 0 ? "(\(navalShipChange > 0 ? "+" : "")\(navalShipChange))" : "")"
                 
                 labels.antiAircraftWarfareLabel.text = "Anti-Aircraft Warfare: \(currentMilitaryLoss.antiAircraftWarfare)  \(antiAircraftWarfareShipChange != 0 ? "(\(antiAircraftWarfareShipChange > 0 ? "+" : "")\(antiAircraftWarfareShipChange))" : "")"
-                
+                 
                 dataLabel.text = ""
             }
         } else {
@@ -200,7 +200,7 @@ class EquipmentLossesController: UIViewController {
     
 }
 
-extension EquipmentLossesController {
+extension LossesController {
     
     private func fetchData(completion: @escaping () -> Void) {
         APIManager.shared.getEquipmentLosses(viewContext: context) { error in
@@ -208,18 +208,18 @@ extension EquipmentLossesController {
                 // Handle the error here
                 print("Error fetching and saving personnel losses:", error)
             } else {
-                // Data fetched and saved successfully
+                let fetchRequest: NSFetchRequest<MilitaryLosses> = MilitaryLosses.fetchRequest()
+                do {
+                    self.results = try self.context.fetch(fetchRequest)
+                    self.results.sort { $0.date > $1.date }
+                    completion() // Call the completion handler
+                } catch {
+                    print("Error fetching data: \(error)")
+                }
                 print("Personnel losses fetched and saved successfully.")
             }
             
-            let fetchRequest: NSFetchRequest<MilitaryLosses> = MilitaryLosses.fetchRequest()
-            do {
-                self.results = try self.context.fetch(fetchRequest)
-                self.results.sort { $0.date > $1.date }
-                completion() // Call the completion handler
-            } catch {
-                print("Error fetching data: \(error)")
-            }
+          
         }
     }
     
