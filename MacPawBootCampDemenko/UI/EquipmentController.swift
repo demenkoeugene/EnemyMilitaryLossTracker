@@ -11,9 +11,11 @@ class EquipmentController: UIViewController, UISearchResultsUpdating {
     
     let context = PersistenceController.shared.container.viewContext
     private var results: [EquipmentLossesOryx] = []
-    private let searchController = UISearchController(searchResultsController: nil)
+    private var searchController = UISearchController(searchResultsController: nil)
     
     var categoriesEquipment = Equipment()
+    var searchIsActive = false
+    
     
     var tableView = UITableView()
     
@@ -79,29 +81,46 @@ class EquipmentController: UIViewController, UISearchResultsUpdating {
 
 
 extension EquipmentController: UITableViewDelegate {
-   
-    
     func updateSearchResults(for searchController: UISearchController) {
-           if let searchText = searchController.searchBar.text?.lowercased() {
-//               categoriesEquipment.filter(with: searchText)
-               tableView.reloadData()
-           }
-       }
+        if let searchText = searchController.searchBar.text?.lowercased() {
+            searchIsActive = !searchText.isEmpty // Update the searchIsActive flag
+            
+            categoriesEquipment = Equipment(equipment: results)
+            categoriesEquipment.filteredArrays = categoriesEquipment.allArrays.filter {
+                $0.title.lowercased().contains(searchText)
+            }
+            
+            tableView.reloadData()
+        }
+    }
+    
+    
+    
 }
 
 
 
-extension EquipmentController: UITableViewDataSource  {
+extension EquipmentController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesEquipment.allArrays.count
+        if searchIsActive {
+            return categoriesEquipment.filteredArrays.count
+        } else {
+            return categoriesEquipment.allArrays.count
+        }
     }
     
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
         
-        let title = categoriesEquipment.allArrays[indexPath.row].title
-        cell.textLabel?.text = title
+        let equipmentArray: [EquipmentLossesOryx]
+        
+        if searchIsActive {
+            equipmentArray = categoriesEquipment.filteredArrays[indexPath.row].equipment
+        } else {
+            equipmentArray = categoriesEquipment.allArrays[indexPath.row].equipment
+        }
+        
+        cell.textLabel?.text = equipmentArray.first?.equipmentOryx // Display the first equipment's name
         
         return cell
     }
@@ -109,22 +128,16 @@ extension EquipmentController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let selectedEquipmentArray = categoriesEquipment.allArrays[indexPath.row].equipment
-        let detailViewController = DetailViewController() // Create an instance
-        detailViewController.selectedEquipmentArray = selectedEquipmentArray // Set the property
+        let selectedEquipmentArray: [EquipmentLossesOryx]
+        
+        if searchIsActive {
+            selectedEquipmentArray = categoriesEquipment.filteredArrays[indexPath.row].equipment
+        } else {
+            selectedEquipmentArray = categoriesEquipment.allArrays[indexPath.row].equipment
+        }
+        
+        let detailViewController = DetailViewController()
+        detailViewController.selectedEquipmentArray = selectedEquipmentArray
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-
-
-
 }
-
-
-
-
-
-
-
-
-
-

@@ -25,6 +25,9 @@ struct EquipmentLossesOryxModel : Decodable{
 
 
 struct Equipment {
+    var filteredArrays: [(title: String, equipment: [EquipmentLossesOryx])] = []
+
+    
     var antiAircraftGuns: [EquipmentLossesOryx] = []
     var jammersAndDeceptionSystems: [EquipmentLossesOryx] = []
     var commandPostsAndCommunicationsStations: [EquipmentLossesOryx] = []
@@ -78,11 +81,12 @@ struct Equipment {
     }
     init(){
     }
+   
+  
     
-    // Private function for filtering equipment based on category name
     private func filterEquipment(_ equipment: [EquipmentLossesOryx], categoryName: String) -> [EquipmentLossesOryx] {
-        return equipment.filter { $0.equipmentOryx == categoryName }
-    }
+           return equipment.filter { $0.equipmentOryx == categoryName }
+       }
 }
 
 extension Equipment {
@@ -116,5 +120,6 @@ extension Equipment {
     }
     
    
-
+   
 }
+
