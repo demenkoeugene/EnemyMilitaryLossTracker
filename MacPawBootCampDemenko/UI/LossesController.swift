@@ -137,6 +137,12 @@ class LossesController: UIViewController {
     }
     
     
+    private func updateLabels(for key: String, current: Int, previous: Int) -> String {
+        let change = current - previous
+        let changeString = change != 0 ? "(\(change > 0 ? "+" : "")\(change))" : ""
+        return "\(key): \(current) \(changeString)"
+    }
+    
     private func fetchMilitaryLosses(for date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -145,49 +151,32 @@ class LossesController: UIViewController {
         if let (currentMilitaryLoss, currentPersonnelLoss) = groupedData[date],
            let previousDate = Calendar.current.date(byAdding: .day, value: -1, to: date),
            let (previousMilitaryLoss, previousPersonnelLoss) = groupedData[previousDate] {
-            // Calculate the change in values
-            let personellChange = currentPersonnelLoss.personnel - previousPersonnelLoss.personnel
-            let aircraftChange = currentMilitaryLoss.aircraft - previousMilitaryLoss.aircraft
-            let helicopterChange = currentMilitaryLoss.helicopter - previousMilitaryLoss.helicopter
-            let tankChange = currentMilitaryLoss.tank - previousMilitaryLoss.tank
-            let APCChange = currentMilitaryLoss.apc - previousMilitaryLoss.apc
-            let fieldArtilleryChange = currentMilitaryLoss.fieldArtillery - previousMilitaryLoss.fieldArtillery
-            let MRLChange = currentMilitaryLoss.mrl - previousMilitaryLoss.mrl
-            let militaryAutoChange = currentMilitaryLoss.militaryAuto - previousMilitaryLoss.militaryAuto
-            let fuelTankChange = currentMilitaryLoss.fuelTank - previousMilitaryLoss.fuelTank
-            let droneChange = currentMilitaryLoss.drone - previousMilitaryLoss.drone
-            let navalShipChange = currentMilitaryLoss.navalShip - previousMilitaryLoss.navalShip
-            let antiAircraftWarfareShipChange = currentMilitaryLoss.antiAircraftWarfare - previousMilitaryLoss.antiAircraftWarfare
             
             // Display current day's values along with changes
             labels.dayLabel.text = "Day: \(currentMilitaryLoss.day)"
-            labels.personellLabel.text = "Personell: \(currentPersonnelLoss.personnel) \(personellChange != 0 ? "(\(personellChange > 0 ? "+" : "")\(personellChange))" : "")"
-            labels.aircraftLabel.text = "Personell: \(currentMilitaryLoss.aircraft) \(aircraftChange != 0 ? "(\(aircraftChange > 0 ? "+" : "")\(aircraftChange))" : "")"
-           
-            labels.helicopterLabel.text = "Helicopter: \(currentMilitaryLoss.helicopter) \(helicopterChange != 0 ? "(\(helicopterChange > 0 ? "+" : "")\(helicopterChange))" : "")"
+            labels.personellLabel.text = updateLabels(for: "Personell", current: Int(currentPersonnelLoss.personnel), previous: Int(previousPersonnelLoss.personnel))
+            labels.aircraftLabel.text = updateLabels(for: "Aircraft", current: Int(currentMilitaryLoss.aircraft), previous: Int(previousMilitaryLoss.aircraft))
+            labels.helicopterLabel.text = updateLabels(for: "Helicopter", current: Int(currentMilitaryLoss.helicopter), previous: Int(previousMilitaryLoss.helicopter))
+            labels.tankLabel.text = updateLabels(for: "Tank", current: Int(currentMilitaryLoss.tank), previous: Int(previousMilitaryLoss.tank))
+            labels.APCLabel.text = updateLabels(for: "APC", current: Int(currentMilitaryLoss.apc), previous: Int(previousMilitaryLoss.apc))
+            labels.fieldArtilleryLabel.text = updateLabels(for: "Field Artillery", current: Int(currentMilitaryLoss.fieldArtillery), previous: Int(previousMilitaryLoss.fieldArtillery))
+            labels.MRLLabel.text = updateLabels(for: "MRL", current: Int(currentMilitaryLoss.mrl), previous: Int(previousMilitaryLoss.mrl))
             
-            labels.tankLabel.text = "Tank: \(currentMilitaryLoss.tank) \(tankChange != 0 ? "(\(tankChange > 0 ? "+" : "")\(tankChange))" : "")"
-            
-            labels.APCLabel.text  = "APC: \(currentMilitaryLoss.apc) \(APCChange != 0 ? "(\(APCChange > 0 ? "+" : "")\(APCChange))" : "")"
-            
-            labels.fieldArtilleryLabel.text = "Field Artillery: \(currentMilitaryLoss.fieldArtillery) \(fieldArtilleryChange != 0 ? "(\(fieldArtilleryChange > 0 ? "+" : "")\(fieldArtilleryChange))" : "")"
-            
-            labels.MRLLabel.text = "MRL: \(currentMilitaryLoss.mrl) \(MRLChange != 0 ? "(\(MRLChange > 0 ? "+" : "")\(MRLChange))" : "")"
-            
-            labels.militaryAutoLabel.text = militaryAutoChange != 0
-                ? "Military Auto: \(currentMilitaryLoss.militaryAuto) \(militaryAutoChange > 0 ? "+\(militaryAutoChange)" : "\(militaryAutoChange)")"
-                : ""
+            labels.droneLabel.text = updateLabels(for: "Drone", current: Int(currentMilitaryLoss.drone), previous: Int(previousMilitaryLoss.drone))
+            labels.navalShipLabel.text = updateLabels(for: "Naval Ship", current: Int(currentMilitaryLoss.navalShip), previous: Int(previousMilitaryLoss.navalShip))
+            labels.antiAircraftWarfareLabel.text = updateLabels(for: "Anti-Aircraft Warfare", current: Int(currentMilitaryLoss.antiAircraftWarfare), previous: Int(previousMilitaryLoss.antiAircraftWarfare))
+            if currentMilitaryLoss.militaryAuto != 0 {
+                labels.militaryAutoLabel.text = updateLabels(for: "Military Auto", current: Int(currentMilitaryLoss.militaryAuto), previous: Int(previousMilitaryLoss.militaryAuto))
+            } else {
+                labels.militaryAutoLabel.text = ""
+            }
 
-            labels.fuelTankLabel.text = fuelTankChange != 0
-                ? "Fuel Tank: \(currentMilitaryLoss.fuelTank) \(fuelTankChange > 0 ? "+\(fuelTankChange)" : "\(fuelTankChange)")"
-                : ""
+            if currentMilitaryLoss.fuelTank != 0 {
+                labels.fuelTankLabel.text = updateLabels(for: "Fuel Tank", current: Int(currentMilitaryLoss.fuelTank), previous: Int(previousMilitaryLoss.fuelTank))
+            } else {
+                labels.fuelTankLabel.text = ""
+            }
 
-            
-            labels.droneLabel.text = "Drone: \(currentMilitaryLoss.drone) \(droneChange != 0 ? "(\(droneChange > 0 ? "+" : "")\(droneChange))" : "")"
-            
-            labels.navalShipLabel.text = "Naval Ship: \(currentMilitaryLoss.navalShip)  \(navalShipChange != 0 ? "(\(navalShipChange > 0 ? "+" : "")\(navalShipChange))" : "")"
-            
-            labels.antiAircraftWarfareLabel.text = "Anti-Aircraft Warfare: \(currentMilitaryLoss.antiAircraftWarfare)  \(antiAircraftWarfareShipChange != 0 ? "(\(antiAircraftWarfareShipChange > 0 ? "+" : "")\(antiAircraftWarfareShipChange))" : "")"
             
             dataLabel.text = ""
         } else {
@@ -211,8 +200,6 @@ class LossesController: UIViewController {
     }
     
 }
-
-
 
 extension LossesController {
     

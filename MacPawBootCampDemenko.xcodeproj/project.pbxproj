@@ -13,9 +13,9 @@
 		F6724DD72A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD12A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift */; };
 		F6724DD82A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD22A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift */; };
 		F6724DD92A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD32A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift */; };
-		F6724DDA2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD42A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */; };
-		F6724DDB2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD52A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */; };
 		F6724DDD2A98AE370023D03E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DDC2A98AE370023D03E /* SplashViewController.swift */; };
+		F6724DE02A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DDE2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */; };
+		F6724DE12A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DDF2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */; };
 		F6808F822A94AD41001F1693 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F812A94AD41001F1693 /* UIView.swift */; };
 		F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F832A94AE59001F1693 /* CustomCell.swift */; };
 		F6808F862A94B83B001F1693 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F852A94B83B001F1693 /* DetailViewController.swift */; };
@@ -59,9 +59,9 @@
 		F6724DD12A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonelLossesCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6724DD22A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryxCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6724DD32A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryxCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F6724DD42A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F6724DD52A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6724DDC2A98AE370023D03E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F6724DDE2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6724DDF2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6808F812A94AD41001F1693 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F6808F832A94AE59001F1693 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F6808F852A94B83B001F1693 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -191,12 +191,12 @@
 		F6F774692A93F7C100E689A9 /* DBModel */ = {
 			isa = PBXGroup;
 			children = (
+				F6724DDE2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */,
+				F6724DDF2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */,
 				F6724DD02A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift */,
 				F6724DD12A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift */,
 				F6724DD22A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift */,
 				F6724DD32A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift */,
-				F6724DD42A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */,
-				F6724DD52A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */,
 				F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */,
 			);
 			path = DBModel;
@@ -333,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F774682A93F7A400E689A9 /* APIManager.swift in Sources */,
+				F6724DE12A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift in Sources */,
 				F6724DAF2A97D7E10023D03E /* EquipmentOryxModel.swift in Sources */,
 				F6808F8C2A94D4A3001F1693 /* DonationViewController.swift in Sources */,
 				F6724DB32A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld in Sources */,
@@ -340,7 +341,6 @@
 				F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */,
 				F6724DD62A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift in Sources */,
 				F6F7746B2A93F7D100E689A9 /* PersistenceController.swift in Sources */,
-				F6724DDB2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift in Sources */,
 				F6F774662A93F79A00E689A9 /* ModelParsingJSON.swift in Sources */,
 				F6724DD82A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift in Sources */,
 				F6724DD72A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift in Sources */,
@@ -348,8 +348,8 @@
 				F6F774372A93F54900E689A9 /* EquipmentController.swift in Sources */,
 				F6724DD92A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift in Sources */,
 				F6808F822A94AD41001F1693 /* UIView.swift in Sources */,
-				F6724DDA2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */,
 				F6808F8A2A94CFAE001F1693 /* LossesController.swift in Sources */,
+				F6724DE02A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */,
 				F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */,
 				F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */,
 				F6808F882A94CED8001F1693 /* TabbarController.swift in Sources */,

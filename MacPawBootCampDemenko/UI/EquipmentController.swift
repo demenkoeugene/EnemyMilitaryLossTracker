@@ -93,9 +93,6 @@ extension EquipmentController: UITableViewDelegate {
             tableView.reloadData()
         }
     }
-    
-    
-    
 }
 
 

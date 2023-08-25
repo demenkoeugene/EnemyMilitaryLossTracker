@@ -62,10 +62,11 @@ extension DetailViewController: UITableViewDataSource {
         
         if let equipment = selectedEquipmentArray?[indexPath.row] {
             let equipmentInfo = """
-                Model: \(String(describing: equipment.model))
-                Manufacturer: \(String(describing: equipment.manufacturer))
+                Model: \(equipment.model ?? "N/A")
+                Manufacturer: \(equipment.manufacturer ?? "N/A")
                 Losses Total: \(equipment.lossesTotal)
                 """
+
             
             let attributedString = NSMutableAttributedString(string: equipmentInfo)
             
