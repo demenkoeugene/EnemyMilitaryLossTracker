@@ -142,7 +142,7 @@ class LossesController: UIViewController {
     }
     
     
-   
+    
     
     private func fetchMilitaryLosses(for date: Date) {
         let dateFormatter = DateFormatter()
@@ -186,7 +186,7 @@ class LossesController: UIViewController {
         
         dataLabel.text = ""
     }
-
+    
     
     private func updateLabel(_ label: UILabel, with key: String, current: Int32, previous: Int32) {
         let change = Int(current) - Int(previous)

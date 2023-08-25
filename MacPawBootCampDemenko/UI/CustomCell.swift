@@ -14,7 +14,7 @@ class CustomCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(labelData)
         
-     
+        
         // Configure labelData's constraints
         labelData.translatesAutoresizingMaskIntoConstraints = false
         labelData.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
@@ -22,7 +22,7 @@ class CustomCell: UITableViewCell {
         labelData.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         labelData.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
         
-       
+        
     }
     
     required init?(coder: NSCoder) {

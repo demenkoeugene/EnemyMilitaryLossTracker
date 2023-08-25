@@ -138,6 +138,6 @@ extension EquipmentController: UITableViewDataSource {
         DispatchQueue.main.async {
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
-
+        
     }
 }

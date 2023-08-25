@@ -13,9 +13,13 @@ class APIManager {
     
     typealias CompletionHandler = (Error?) -> Void
     
+    // MARK: - URLs
+    private let personnelLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_personnel.json"
+    private let equipmentLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_equipment.json"
+    private let equipmentLossesOryxURL = "https://raw.githubusercontent.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset/5fc26df03f91acfe175bc856dbd4fd9e5b77ab09/data/russia_losses_equipment_oryx.json"
     
     // MARK: - Getting personnel loss data from JSON
-    let personnelLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_personnel.json"
+    
     
     func getPersonnelLosses(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         // Clear existing data if needed
@@ -91,7 +95,7 @@ class APIManager {
     
     
     // MARK: - Getting equipment loss data from JSON
-    let equipmentLossesURL = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/c5f7deaa838c0a2243b5a59d5b5fd9cf463b4dda/data/russia_losses_equipment.json"
+    
     
     func getEquipmentLosses(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         // Clear existing data if needed
@@ -172,8 +176,6 @@ class APIManager {
     }
     
     
-    
-    let equipmentLossesOryxURL = "https://raw.githubusercontent.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset/5fc26df03f91acfe175bc856dbd4fd9e5b77ab09/data/russia_losses_equipment_oryx.json"
     
     func getEquipmentLossesOryx(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler){
         // Clear existing data if needed

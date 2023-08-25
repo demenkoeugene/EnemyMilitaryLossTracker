@@ -8,13 +8,12 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-    
-    private let backgroundImageNames = ["logo-macpaw"] // Replace with your image names
+    private let backgroundImageNames = ["logo-macpaw"]
     private var currentImageIndex = 0
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit // Adjust content mode as needed
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -23,7 +22,7 @@ class SplashViewController: UIViewController {
         let label = UILabel()
         label.text = "by Yevhenii Demenko for"
         label.font = UIFont.systemFont(ofSize: 16)
-        label.alpha = 0 // Make the label initially transparent
+        label.alpha = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -31,12 +30,13 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
-        view.addSubview(backgroundImageView)
-        view.addSubview(label)
-        
-        // Add constraints to center the image view and set a fixed size
+        [backgroundImageView, label].forEach { view.addSubview($0) }
+        setupConstraints()
+        animateImages()
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             backgroundImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             backgroundImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
@@ -46,8 +46,13 @@ class SplashViewController: UIViewController {
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.bottomAnchor.constraint(equalTo: backgroundImageView.topAnchor, constant: -10)
         ])
-        
-        animateImages()
+    }
+    
+    private struct AnimationConstants {
+        static let scale: CGFloat = 0.65
+        static let imageDuration: TimeInterval = 2.0
+        static let labelDuration: TimeInterval = 1.0
+        static let transitionDelay: TimeInterval = 1.5
     }
     
     private func animateImages() {
@@ -56,22 +61,21 @@ class SplashViewController: UIViewController {
             return
         }
         
-        let imageName = backgroundImageNames[currentImageIndex]
-        backgroundImageView.image = UIImage(named: imageName)
+        backgroundImageView.image = UIImage(named: backgroundImageNames[currentImageIndex])
+        backgroundImageView.transform = .init(scaleX: AnimationConstants.scale, y: AnimationConstants.scale)
         
-        backgroundImageView.transform = CGAffineTransform(scaleX: 0.65, y: 0.65)
-        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: { [weak self] in
+        UIView.animate(withDuration: AnimationConstants.imageDuration, delay: 0, options: .curveEaseOut) { [weak self] in
             self?.backgroundImageView.transform = .identity
-        }) { [weak self] (_) in
+        } completion: { [weak self] _ in
             self?.animateLabel()
         }
     }
     
     private func animateLabel() {
-        UIView.animate(withDuration: 1.0, animations: { [weak self] in
-            self?.label.alpha = 1.0
-        }) { [weak self] (_) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+        UIView.animate(withDuration: AnimationConstants.labelDuration) { [weak self] in
+            self?.label.alpha = 1
+        } completion: { [weak self] _ in
+            self?.backgroundImageView.delay(AnimationConstants.transitionDelay) { [weak self] in
                 self?.currentImageIndex += 1
                 self?.animateImages()
             }
@@ -81,6 +85,12 @@ class SplashViewController: UIViewController {
     private func transitionToTabbarController() {
         let tabBarController = TabbarController()
         tabBarController.modalPresentationStyle = .fullScreen
-        self.present(tabBarController, animated: true, completion: nil)
+        present(tabBarController, animated: true, completion: nil)
+    }
+}
+
+extension UIView {
+    func delay(_ delay: TimeInterval, closure: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: closure)
     }
 }

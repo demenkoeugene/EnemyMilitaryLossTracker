@@ -13,11 +13,12 @@ class DonationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        configureTableView()
+        
+        
         fetchData()
+        configureTableView()
     }
-
+    
     func configureTableView() {
         view.addSubview(tableView)
         setTableDelegate()

@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     var selectedEquipmentArray: [EquipmentLossesOryxCoreData]?
     
     // Labels to display the data
@@ -21,18 +21,16 @@ class DetailViewController: UIViewController {
         title = selectedEquipmentArray?.first?.equipmentOryx
         
         navigationItem.largeTitleDisplayMode = .never
-        // Do any additional setup after loading the view.
-        
         setupUI()
-       
+        
     }
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnTap = true
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
@@ -45,15 +43,15 @@ class DetailViewController: UIViewController {
         view.addSubview(tableView)
         tableView.reloadData() // Reload the table view to display the data
     }
-
-
     
-
+    
+    
+    
 }
 
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        
         return selectedEquipmentArray?.count ?? 0
     }
     
@@ -66,7 +64,7 @@ extension DetailViewController: UITableViewDataSource {
                 Manufacturer: \(equipment.manufacturer ?? "N/A")
                 Losses Total: \(equipment.lossesTotal)
                 """
-
+            
             
             let attributedString = NSMutableAttributedString(string: equipmentInfo)
             
@@ -82,7 +80,7 @@ extension DetailViewController: UITableViewDataSource {
             cell.textLabel?.numberOfLines = 0 // Allow multiple lines of text
             cell.textLabel?.attributedText = attributedString
         }
-
+        
         
         return cell
     }
