@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var selectedEquipmentArray: [EquipmentLossesOryx]?
+    var selectedEquipmentArray: [EquipmentLossesOryxCoreData]?
     
     // Labels to display the data
     let dayLabel = UILabel()
@@ -62,10 +62,10 @@ extension DetailViewController: UITableViewDataSource {
         
         if let equipment = selectedEquipmentArray?[indexPath.row] {
             let equipmentInfo = """
-            Model: \(equipment.model ?? "")
-            Manufacturer: \(equipment.manufacturer ?? "")
-            Losses Total: \(equipment.lossesTotal)
-            """
+                Model: \(String(describing: equipment.model))
+                Manufacturer: \(String(describing: equipment.manufacturer))
+                Losses Total: \(equipment.lossesTotal)
+                """
             
             let attributedString = NSMutableAttributedString(string: equipmentInfo)
             

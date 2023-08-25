@@ -10,23 +10,26 @@ import CoreData
 
 struct Labels {
     let dayLabel = UILabel()
+    let personellLabel = UILabel()
     let aircraftLabel = UILabel()
     let helicopterLabel = UILabel()
     let tankLabel = UILabel()
     let APCLabel = UILabel()
     let fieldArtilleryLabel = UILabel()
     let MRLLabel = UILabel()
-    let militaryAutoLabel = UILabel()
-    let fuelTankLabel = UILabel()
     let droneLabel = UILabel()
     let navalShipLabel = UILabel()
     let antiAircraftWarfareLabel = UILabel()
+    let militaryAutoLabel = UILabel()
+    let fuelTankLabel = UILabel()
 }
 
 class LossesController: UIViewController {
     
     let context = PersistenceController.shared.container.viewContext
-    var results: [MilitaryLosses] = []
+    var results: [MilitaryLossesCoreData] = []
+    var personnelArray: [PersonelLossesCoreData] = []
+    var groupedData: [Date: (MilitaryLossesCoreData, PersonelLossesCoreData)] = [:]
     let datePicker = UIDatePicker()
     
     let dataLabel: UILabel = {
@@ -69,17 +72,18 @@ class LossesController: UIViewController {
     private func setupLabelConstraints() {
         let labelArray = [
             labels.dayLabel,
+            labels.personellLabel,
             labels.aircraftLabel,
             labels.helicopterLabel,
             labels.tankLabel,
             labels.APCLabel,
             labels.fieldArtilleryLabel,
             labels.MRLLabel,
-            labels.militaryAutoLabel,
-            labels.fuelTankLabel,
             labels.droneLabel,
             labels.navalShipLabel,
-            labels.antiAircraftWarfareLabel
+            labels.antiAircraftWarfareLabel,
+            labels.militaryAutoLabel,
+            labels.fuelTankLabel
         ]
         
         for (index, label) in labelArray.enumerated() {
@@ -138,49 +142,58 @@ class LossesController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         // Find the military loss entry that matches the selected date
-        if let currentMilitaryLoss = results.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
-            if let previousMilitaryLoss = results.first(where: { $0.date == Calendar.current.date(byAdding: .day, value: -1, to: date) }) {
-                // Calculate the change in values
-                let aircraftChange = currentMilitaryLoss.aircraft - previousMilitaryLoss.aircraft
-                let helicopterChange = currentMilitaryLoss.helicopter - previousMilitaryLoss.helicopter
-                let tankChange = currentMilitaryLoss.tank - previousMilitaryLoss.tank
-                let APCChange = currentMilitaryLoss.apc - previousMilitaryLoss.apc
-                let fieldArtilleryChange = currentMilitaryLoss.fieldArtillery - previousMilitaryLoss.fieldArtillery
-                let MRLChange = currentMilitaryLoss.mrl - previousMilitaryLoss.mrl
-                let militaryAutoChange = currentMilitaryLoss.militaryAuto - previousMilitaryLoss.militaryAuto
-                let fuelTankChange = currentMilitaryLoss.fuelTank - previousMilitaryLoss.fuelTank
-                let droneChange = currentMilitaryLoss.drone - previousMilitaryLoss.drone
-                let navalShipChange = currentMilitaryLoss.navalShip - previousMilitaryLoss.navalShip
-                let antiAircraftWarfareShipChange = currentMilitaryLoss.antiAircraftWarfare - previousMilitaryLoss.antiAircraftWarfare
-                
-                // Display current day's values along with changes
-                labels.dayLabel.text = "Day: \(currentMilitaryLoss.day)"
-                labels.aircraftLabel.text = "Aircraft: \(currentMilitaryLoss.aircraft) \(aircraftChange != 0 ? "(\(aircraftChange > 0 ? "+" : "")\(aircraftChange))" : "")"
-                labels.helicopterLabel.text = "Helicopter: \(currentMilitaryLoss.helicopter) \(helicopterChange != 0 ? "(\(helicopterChange > 0 ? "+" : "")\(helicopterChange))" : "")"
-                
-                labels.tankLabel.text = "Tank: \(currentMilitaryLoss.tank) \(tankChange != 0 ? "(\(tankChange > 0 ? "+" : "")\(tankChange))" : "")"
-                
-                labels.APCLabel.text  = "APC: \(currentMilitaryLoss.apc) \(APCChange != 0 ? "(\(APCChange > 0 ? "+" : "")\(APCChange))" : "")"
-                
-                labels.fieldArtilleryLabel.text = "Field Artillery: \(currentMilitaryLoss.fieldArtillery) \(fieldArtilleryChange != 0 ? "(\(fieldArtilleryChange > 0 ? "+" : "")\(fieldArtilleryChange))" : "")"
-                
-                labels.MRLLabel.text = "MRL: \(currentMilitaryLoss.mrl) \(MRLChange != 0 ? "(\(MRLChange > 0 ? "+" : "")\(MRLChange))" : "")"
-                
-                labels.militaryAutoLabel.text = "Military Auto: \(currentMilitaryLoss.militaryAuto) \(militaryAutoChange != 0 ? "(\(militaryAutoChange > 0 ? "+" : "")\(militaryAutoChange))" : "")"
-                
-                labels.fuelTankLabel.text = "Fuel Tank: \(currentMilitaryLoss.fuelTank) \(fuelTankChange != 0 ? "(\(fuelTankChange > 0 ? "+" : "")\(fuelTankChange))" : "")"
-                
-                labels.droneLabel.text = "Drone: \(currentMilitaryLoss.drone) \(droneChange != 0 ? "(\(droneChange > 0 ? "+" : "")\(droneChange))" : "")"
-                
-                labels.navalShipLabel.text = "Naval Ship: \(currentMilitaryLoss.navalShip)  \(navalShipChange != 0 ? "(\(navalShipChange > 0 ? "+" : "")\(navalShipChange))" : "")"
-                
-                labels.antiAircraftWarfareLabel.text = "Anti-Aircraft Warfare: \(currentMilitaryLoss.antiAircraftWarfare)  \(antiAircraftWarfareShipChange != 0 ? "(\(antiAircraftWarfareShipChange > 0 ? "+" : "")\(antiAircraftWarfareShipChange))" : "")"
-                 
-                dataLabel.text = ""
-            }
+        if let (currentMilitaryLoss, currentPersonnelLoss) = groupedData[date],
+           let previousDate = Calendar.current.date(byAdding: .day, value: -1, to: date),
+           let (previousMilitaryLoss, previousPersonnelLoss) = groupedData[previousDate] {
+            // Calculate the change in values
+            let personellChange = currentPersonnelLoss.personnel - previousPersonnelLoss.personnel
+            let aircraftChange = currentMilitaryLoss.aircraft - previousMilitaryLoss.aircraft
+            let helicopterChange = currentMilitaryLoss.helicopter - previousMilitaryLoss.helicopter
+            let tankChange = currentMilitaryLoss.tank - previousMilitaryLoss.tank
+            let APCChange = currentMilitaryLoss.apc - previousMilitaryLoss.apc
+            let fieldArtilleryChange = currentMilitaryLoss.fieldArtillery - previousMilitaryLoss.fieldArtillery
+            let MRLChange = currentMilitaryLoss.mrl - previousMilitaryLoss.mrl
+            let militaryAutoChange = currentMilitaryLoss.militaryAuto - previousMilitaryLoss.militaryAuto
+            let fuelTankChange = currentMilitaryLoss.fuelTank - previousMilitaryLoss.fuelTank
+            let droneChange = currentMilitaryLoss.drone - previousMilitaryLoss.drone
+            let navalShipChange = currentMilitaryLoss.navalShip - previousMilitaryLoss.navalShip
+            let antiAircraftWarfareShipChange = currentMilitaryLoss.antiAircraftWarfare - previousMilitaryLoss.antiAircraftWarfare
+            
+            // Display current day's values along with changes
+            labels.dayLabel.text = "Day: \(currentMilitaryLoss.day)"
+            labels.personellLabel.text = "Personell: \(currentPersonnelLoss.personnel) \(personellChange != 0 ? "(\(personellChange > 0 ? "+" : "")\(personellChange))" : "")"
+            labels.aircraftLabel.text = "Personell: \(currentMilitaryLoss.aircraft) \(aircraftChange != 0 ? "(\(aircraftChange > 0 ? "+" : "")\(aircraftChange))" : "")"
+           
+            labels.helicopterLabel.text = "Helicopter: \(currentMilitaryLoss.helicopter) \(helicopterChange != 0 ? "(\(helicopterChange > 0 ? "+" : "")\(helicopterChange))" : "")"
+            
+            labels.tankLabel.text = "Tank: \(currentMilitaryLoss.tank) \(tankChange != 0 ? "(\(tankChange > 0 ? "+" : "")\(tankChange))" : "")"
+            
+            labels.APCLabel.text  = "APC: \(currentMilitaryLoss.apc) \(APCChange != 0 ? "(\(APCChange > 0 ? "+" : "")\(APCChange))" : "")"
+            
+            labels.fieldArtilleryLabel.text = "Field Artillery: \(currentMilitaryLoss.fieldArtillery) \(fieldArtilleryChange != 0 ? "(\(fieldArtilleryChange > 0 ? "+" : "")\(fieldArtilleryChange))" : "")"
+            
+            labels.MRLLabel.text = "MRL: \(currentMilitaryLoss.mrl) \(MRLChange != 0 ? "(\(MRLChange > 0 ? "+" : "")\(MRLChange))" : "")"
+            
+            labels.militaryAutoLabel.text = militaryAutoChange != 0
+                ? "Military Auto: \(currentMilitaryLoss.militaryAuto) \(militaryAutoChange > 0 ? "+\(militaryAutoChange)" : "\(militaryAutoChange)")"
+                : ""
+
+            labels.fuelTankLabel.text = fuelTankChange != 0
+                ? "Fuel Tank: \(currentMilitaryLoss.fuelTank) \(fuelTankChange > 0 ? "+\(fuelTankChange)" : "\(fuelTankChange)")"
+                : ""
+
+            
+            labels.droneLabel.text = "Drone: \(currentMilitaryLoss.drone) \(droneChange != 0 ? "(\(droneChange > 0 ? "+" : "")\(droneChange))" : "")"
+            
+            labels.navalShipLabel.text = "Naval Ship: \(currentMilitaryLoss.navalShip)  \(navalShipChange != 0 ? "(\(navalShipChange > 0 ? "+" : "")\(navalShipChange))" : "")"
+            
+            labels.antiAircraftWarfareLabel.text = "Anti-Aircraft Warfare: \(currentMilitaryLoss.antiAircraftWarfare)  \(antiAircraftWarfareShipChange != 0 ? "(\(antiAircraftWarfareShipChange > 0 ? "+" : "")\(antiAircraftWarfareShipChange))" : "")"
+            
+            dataLabel.text = ""
         } else {
             // Clear the text of all labels
             labels.dayLabel.text = ""
+            labels.personellLabel.text = ""
             labels.aircraftLabel.text = ""
             labels.helicopterLabel.text = ""
             labels.tankLabel.text = ""
@@ -193,12 +206,13 @@ class LossesController: UIViewController {
             labels.navalShipLabel.text = ""
             labels.antiAircraftWarfareLabel.text = ""
             
-            
             dataLabel.text = "No data available for the selected date."
         }
     }
     
 }
+
+
 
 extension LossesController {
     
@@ -206,23 +220,42 @@ extension LossesController {
         APIManager.shared.getEquipmentLosses(viewContext: context) { error in
             if let error = error {
                 // Handle the error here
-                print("Error fetching and saving personnel losses:", error)
+                print("Error fetching and saving equipment losses:", error)
             } else {
-                let fetchRequest: NSFetchRequest<MilitaryLosses> = MilitaryLosses.fetchRequest()
-                do {
-                    self.results = try self.context.fetch(fetchRequest)
-                    self.results.sort { $0.date > $1.date }
-                    completion() // Call the completion handler
-                } catch {
-                    print("Error fetching data: \(error)")
+                APIManager.shared.getPersonnelLosses(viewContext: self.context) { [self] error in
+                    if let error = error {
+                        // Handle the error here
+                        print("Error fetching and saving personnel losses:", error)
+                    } else {
+                        let fetchRequestMil: NSFetchRequest<MilitaryLossesCoreData> = MilitaryLossesCoreData.fetchRequest()
+                        let fetchRequestPers: NSFetchRequest<PersonelLossesCoreData> = PersonelLossesCoreData.fetchRequest()
+                        do {
+                            self.results = try self.context.fetch(fetchRequestMil)
+                            self.results.sort { $0.date! > $1.date! }
+                            self.personnelArray = try self.context.fetch(fetchRequestPers)
+                            self.personnelArray.sort { $0.date! > $1.date! }
+                            print("Data fetched and saved successfully.")
+                            
+                           
+                            for militaryLoss in self.results {
+                                if let personnelLoss = personnelArray.first(where: { Calendar.current.isDate($0.date!, inSameDayAs: militaryLoss.date!) }) {
+                                    groupedData[militaryLoss.date!] = (militaryLoss, personnelLoss)
+                                }
+                            }
+                            
+                          
+                            
+                        } catch {
+                            print("Error fetching data: \(error)")
+                        }
+                    }
+                    
+                    completion() // Call the completion handler once both methods are done
                 }
-                print("Personnel losses fetched and saved successfully.")
             }
-            
-          
         }
     }
-    
+
 }
 
 

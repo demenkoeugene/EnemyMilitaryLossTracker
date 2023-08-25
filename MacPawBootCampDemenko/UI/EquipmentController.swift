@@ -10,7 +10,7 @@ import UIKit
 class EquipmentController: UIViewController, UISearchResultsUpdating {
     
     let context = PersistenceController.shared.container.viewContext
-    private var results: [EquipmentLossesOryx] = []
+    private var results: [EquipmentLossesOryxCoreData] = []
     private var searchController = UISearchController(searchResultsController: nil)
     
     var categoriesEquipment = Equipment()
@@ -63,7 +63,7 @@ class EquipmentController: UIViewController, UISearchResultsUpdating {
     }
     
     private func fetch() {
-        let fetchRequest: NSFetchRequest<EquipmentLossesOryx> = EquipmentLossesOryx.fetchRequest()
+        let fetchRequest: NSFetchRequest<EquipmentLossesOryxCoreData> = EquipmentLossesOryxCoreData.fetchRequest()
         
         do {
             results = try context.fetch(fetchRequest)
@@ -112,7 +112,7 @@ extension EquipmentController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
         
-        let equipmentArray: [EquipmentLossesOryx]
+        let equipmentArray: [EquipmentLossesOryxCoreData]
         
         if searchIsActive {
             equipmentArray = categoriesEquipment.filteredArrays[indexPath.row].equipment
@@ -128,7 +128,7 @@ extension EquipmentController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let selectedEquipmentArray: [EquipmentLossesOryx]
+        let selectedEquipmentArray: [EquipmentLossesOryxCoreData]
         
         if searchIsActive {
             selectedEquipmentArray = categoriesEquipment.filteredArrays[indexPath.row].equipment
@@ -138,6 +138,9 @@ extension EquipmentController: UITableViewDataSource {
         
         let detailViewController = DetailViewController()
         detailViewController.selectedEquipmentArray = selectedEquipmentArray
-        navigationController?.pushViewController(detailViewController, animated: true)
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+
     }
 }

@@ -25,35 +25,35 @@ struct EquipmentLossesOryxModel : Decodable{
 
 
 struct Equipment {
-    var filteredArrays: [(title: String, equipment: [EquipmentLossesOryx])] = []
+    var filteredArrays: [(title: String, equipment: [EquipmentLossesOryxCoreData])] = []
 
     
-    var antiAircraftGuns: [EquipmentLossesOryx] = []
-    var jammersAndDeceptionSystems: [EquipmentLossesOryx] = []
-    var commandPostsAndCommunicationsStations: [EquipmentLossesOryx] = []
-    var multipleRocketLaunchers: [EquipmentLossesOryx] = []
-    var surfaceToAirMissileSystems: [EquipmentLossesOryx] = []
-    var trucksVehiclesAndJeeps: [EquipmentLossesOryx] = []
-    var armouredFightingVehicles: [EquipmentLossesOryx] = []
-    var selfPropelledAntiTankMissileSystems: [EquipmentLossesOryx] = []
-    var mineResistantAmbushProtected: [EquipmentLossesOryx] = []
-    var aircraft: [EquipmentLossesOryx] = []
-    var selfPropelledAntiAircraftGuns: [EquipmentLossesOryx] = []
-    var infantryMobilityVehicles: [EquipmentLossesOryx] = []
-    var selfPropelledArtillery: [EquipmentLossesOryx] = []
-    var towedArtillery: [EquipmentLossesOryx] = []
-    var tanks: [EquipmentLossesOryx] = []
-    var artillerySupportVehiclesAndEquipment: [EquipmentLossesOryx] = []
-    var helicopters: [EquipmentLossesOryx] = []
-    var navalShips: [EquipmentLossesOryx] = []
-    var radars: [EquipmentLossesOryx] = []
-    var reconnaissanceUnmannedAerialVehicles: [EquipmentLossesOryx] = []
-    var infantryFightingVehicles: [EquipmentLossesOryx] = []
-    var unmannedCombatAerialVehicles: [EquipmentLossesOryx] = []
-    var engineeringVehiclesAndEquipment: [EquipmentLossesOryx] = []
-    var armouredPersonnelCarriers: [EquipmentLossesOryx] = []
+    var antiAircraftGuns: [EquipmentLossesOryxCoreData] = []
+    var jammersAndDeceptionSystems: [EquipmentLossesOryxCoreData] = []
+    var commandPostsAndCommunicationsStations: [EquipmentLossesOryxCoreData] = []
+    var multipleRocketLaunchers: [EquipmentLossesOryxCoreData] = []
+    var surfaceToAirMissileSystems: [EquipmentLossesOryxCoreData] = []
+    var trucksVehiclesAndJeeps: [EquipmentLossesOryxCoreData] = []
+    var armouredFightingVehicles: [EquipmentLossesOryxCoreData] = []
+    var selfPropelledAntiTankMissileSystems: [EquipmentLossesOryxCoreData] = []
+    var mineResistantAmbushProtected: [EquipmentLossesOryxCoreData] = []
+    var aircraft: [EquipmentLossesOryxCoreData] = []
+    var selfPropelledAntiAircraftGuns: [EquipmentLossesOryxCoreData] = []
+    var infantryMobilityVehicles: [EquipmentLossesOryxCoreData] = []
+    var selfPropelledArtillery: [EquipmentLossesOryxCoreData] = []
+    var towedArtillery: [EquipmentLossesOryxCoreData] = []
+    var tanks: [EquipmentLossesOryxCoreData] = []
+    var artillerySupportVehiclesAndEquipment: [EquipmentLossesOryxCoreData] = []
+    var helicopters: [EquipmentLossesOryxCoreData] = []
+    var navalShips: [EquipmentLossesOryxCoreData] = []
+    var radars: [EquipmentLossesOryxCoreData] = []
+    var reconnaissanceUnmannedAerialVehicles: [EquipmentLossesOryxCoreData] = []
+    var infantryFightingVehicles: [EquipmentLossesOryxCoreData] = []
+    var unmannedCombatAerialVehicles: [EquipmentLossesOryxCoreData] = []
+    var engineeringVehiclesAndEquipment: [EquipmentLossesOryxCoreData] = []
+    var armouredPersonnelCarriers: [EquipmentLossesOryxCoreData] = []
     
-    init(equipment: [EquipmentLossesOryx]) {
+    init(equipment: [EquipmentLossesOryxCoreData]) {
         self.antiAircraftGuns = filterEquipment(equipment, categoryName: "Anti-Aircraft Guns")
         self.jammersAndDeceptionSystems = filterEquipment(equipment, categoryName: "Jammers And Deception Systems")
         self.commandPostsAndCommunicationsStations = filterEquipment(equipment, categoryName: "Command Posts And Communications Stations")
@@ -84,13 +84,13 @@ struct Equipment {
    
   
     
-    private func filterEquipment(_ equipment: [EquipmentLossesOryx], categoryName: String) -> [EquipmentLossesOryx] {
+    private func filterEquipment(_ equipment: [EquipmentLossesOryxCoreData], categoryName: String) -> [EquipmentLossesOryxCoreData] {
            return equipment.filter { $0.equipmentOryx == categoryName }
        }
 }
 
 extension Equipment {
-    var allArrays: [(title: String, equipment: [EquipmentLossesOryx])] {
+    var allArrays: [(title: String, equipment: [EquipmentLossesOryxCoreData])] {
         [
             ("Aircraft", aircraft),
             ("Anti-Aircraft Guns", antiAircraftGuns),

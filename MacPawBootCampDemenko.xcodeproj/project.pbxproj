@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F6724DA82A964B260023D03E /* MilitaryLosses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DA62A964B260023D03E /* MilitaryLosses+CoreDataClass.swift */; };
-		F6724DA92A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DA72A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift */; };
-		F6724DAC2A97736F0023D03E /* EquipmentLossesOryx+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DAA2A97736F0023D03E /* EquipmentLossesOryx+CoreDataClass.swift */; };
-		F6724DAD2A97736F0023D03E /* EquipmentLossesOryx+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DAB2A97736F0023D03E /* EquipmentLossesOryx+CoreDataProperties.swift */; };
 		F6724DAF2A97D7E10023D03E /* EquipmentOryxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DAE2A97D7E10023D03E /* EquipmentOryxModel.swift */; };
+		F6724DB32A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6724DB12A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld */; };
+		F6724DD62A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD02A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift */; };
+		F6724DD72A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD12A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift */; };
+		F6724DD82A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD22A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift */; };
+		F6724DD92A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD32A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift */; };
+		F6724DDA2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD42A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */; };
+		F6724DDB2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD52A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */; };
+		F6724DDD2A98AE370023D03E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DDC2A98AE370023D03E /* SplashViewController.swift */; };
 		F6808F822A94AD41001F1693 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F812A94AD41001F1693 /* UIView.swift */; };
 		F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F832A94AE59001F1693 /* CustomCell.swift */; };
 		F6808F862A94B83B001F1693 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F852A94B83B001F1693 /* DetailViewController.swift */; };
@@ -29,9 +33,6 @@
 		F6F774682A93F7A400E689A9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774672A93F7A400E689A9 /* APIManager.swift */; };
 		F6F7746B2A93F7D100E689A9 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */; };
 		F6F7746D2A93F7E500E689A9 /* data in Resources */ = {isa = PBXBuildFile; fileRef = F6F7746C2A93F7E500E689A9 /* data */; };
-		F6F774832A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7747D2A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift */; };
-		F6F774842A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7747E2A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift */; };
-		F6F7748B2A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6F774892A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F6724DA62A964B260023D03E /* MilitaryLosses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F6724DA72A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLosses+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F6724DAA2A97736F0023D03E /* EquipmentLossesOryx+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryx+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F6724DAB2A97736F0023D03E /* EquipmentLossesOryx+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryx+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6724DAE2A97D7E10023D03E /* EquipmentOryxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentOryxModel.swift; sourceTree = "<group>"; };
+		F6724DB22A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPawBootCampDemenko.xcdatamodel; sourceTree = "<group>"; };
+		F6724DD02A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonelLossesCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6724DD12A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonelLossesCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6724DD22A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryxCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6724DD32A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentLossesOryxCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6724DD42A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F6724DD52A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F6724DDC2A98AE370023D03E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F6808F812A94AD41001F1693 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F6808F832A94AE59001F1693 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F6808F852A94B83B001F1693 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -78,9 +83,6 @@
 		F6F774672A93F7A400E689A9 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		F6F7746C2A93F7E500E689A9 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
-		F6F7747D2A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonnelLosses+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F6F7747E2A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonnelLosses+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F6F7748A2A9405E200E689A9 /* MacPawBootcamp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPawBootcamp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,13 +123,14 @@
 		F6808F8D2A952F20001F1693 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F6724DDC2A98AE370023D03E /* SplashViewController.swift */,
+				F6808F872A94CED8001F1693 /* TabbarController.swift */,
 				F6808F892A94CFAE001F1693 /* LossesController.swift */,
-				F6808F832A94AE59001F1693 /* CustomCell.swift */,
 				F6F774362A93F54900E689A9 /* EquipmentController.swift */,
-				F6808F812A94AD41001F1693 /* UIView.swift */,
 				F6808F852A94B83B001F1693 /* DetailViewController.swift */,
 				F6808F8B2A94D4A3001F1693 /* DonationViewController.swift */,
-				F6808F872A94CED8001F1693 /* TabbarController.swift */,
+				F6808F832A94AE59001F1693 /* CustomCell.swift */,
+				F6808F812A94AD41001F1693 /* UIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -163,7 +166,7 @@
 				F6724DB02A97D7EB0023D03E /* Model */,
 				F6F7743E2A93F54A00E689A9 /* Assets.xcassets */,
 				F6F774432A93F54A00E689A9 /* Info.plist */,
-				F6F774892A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld */,
+				F6724DB12A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld */,
 			);
 			path = MacPawBootCampDemenko;
 			sourceTree = "<group>";
@@ -188,12 +191,12 @@
 		F6F774692A93F7C100E689A9 /* DBModel */ = {
 			isa = PBXGroup;
 			children = (
-				F6724DAA2A97736F0023D03E /* EquipmentLossesOryx+CoreDataClass.swift */,
-				F6724DAB2A97736F0023D03E /* EquipmentLossesOryx+CoreDataProperties.swift */,
-				F6F7747D2A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift */,
-				F6F7747E2A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift */,
-				F6724DA62A964B260023D03E /* MilitaryLosses+CoreDataClass.swift */,
-				F6724DA72A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift */,
+				F6724DD02A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift */,
+				F6724DD12A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift */,
+				F6724DD22A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift */,
+				F6724DD32A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift */,
+				F6724DD42A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */,
+				F6724DD52A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */,
 				F6F7746A2A93F7D100E689A9 /* PersistenceController.swift */,
 			);
 			path = DBModel;
@@ -329,24 +332,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6F7748B2A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld in Sources */,
 				F6F774682A93F7A400E689A9 /* APIManager.swift in Sources */,
 				F6724DAF2A97D7E10023D03E /* EquipmentOryxModel.swift in Sources */,
-				F6F774842A9404F900E689A9 /* PersonnelLosses+CoreDataProperties.swift in Sources */,
-				F6F774832A9404F900E689A9 /* PersonnelLosses+CoreDataClass.swift in Sources */,
 				F6808F8C2A94D4A3001F1693 /* DonationViewController.swift in Sources */,
+				F6724DB32A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld in Sources */,
 				F6808F862A94B83B001F1693 /* DetailViewController.swift in Sources */,
 				F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */,
+				F6724DD62A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift in Sources */,
 				F6F7746B2A93F7D100E689A9 /* PersistenceController.swift in Sources */,
+				F6724DDB2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift in Sources */,
 				F6F774662A93F79A00E689A9 /* ModelParsingJSON.swift in Sources */,
-				F6724DA82A964B260023D03E /* MilitaryLosses+CoreDataClass.swift in Sources */,
+				F6724DD82A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataClass.swift in Sources */,
+				F6724DD72A98807F0023D03E /* PersonelLossesCoreData+CoreDataProperties.swift in Sources */,
+				F6724DDD2A98AE370023D03E /* SplashViewController.swift in Sources */,
 				F6F774372A93F54900E689A9 /* EquipmentController.swift in Sources */,
+				F6724DD92A98807F0023D03E /* EquipmentLossesOryxCoreData+CoreDataProperties.swift in Sources */,
 				F6808F822A94AD41001F1693 /* UIView.swift in Sources */,
+				F6724DDA2A98807F0023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */,
 				F6808F8A2A94CFAE001F1693 /* LossesController.swift in Sources */,
-				F6724DAC2A97736F0023D03E /* EquipmentLossesOryx+CoreDataClass.swift in Sources */,
-				F6724DAD2A97736F0023D03E /* EquipmentLossesOryx+CoreDataProperties.swift in Sources */,
 				F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */,
-				F6724DA92A964B260023D03E /* MilitaryLosses+CoreDataProperties.swift in Sources */,
 				F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */,
 				F6808F882A94CED8001F1693 /* TabbarController.swift in Sources */,
 			);
@@ -671,12 +675,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F6F774892A9405E200E689A9 /* MacPawBootCampDemenko.xcdatamodeld */ = {
+		F6724DB12A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F6F7748A2A9405E200E689A9 /* MacPawBootcamp.xcdatamodel */,
+				F6724DB22A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodel */,
 			);
-			currentVersion = F6F7748A2A9405E200E689A9 /* MacPawBootcamp.xcdatamodel */;
+			currentVersion = F6724DB22A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodel */;
 			path = MacPawBootCampDemenko.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

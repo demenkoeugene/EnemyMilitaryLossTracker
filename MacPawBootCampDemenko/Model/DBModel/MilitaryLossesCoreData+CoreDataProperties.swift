@@ -1,8 +1,8 @@
 //
-//  MilitaryLosses+CoreDataProperties.swift
+//  MilitaryLossesCoreData+CoreDataProperties.swift
 //  MacPawBootCampDemenko
 //
-//  Created by Eugene Demenko on 23.08.2023.
+//  Created by Eugene Demenko on 25.08.2023.
 //
 //
 
@@ -10,16 +10,16 @@ import Foundation
 import CoreData
 
 
-extension MilitaryLosses {
+extension MilitaryLossesCoreData {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<MilitaryLosses> {
-        return NSFetchRequest<MilitaryLosses>(entityName: "MilitaryLosses")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<MilitaryLossesCoreData> {
+        return NSFetchRequest<MilitaryLossesCoreData>(entityName: "MilitaryLossesCoreData")
     }
 
     @NSManaged public var aircraft: Int32
     @NSManaged public var antiAircraftWarfare: Int32
     @NSManaged public var apc: Int32
-    @NSManaged public var date: Date
+    @NSManaged public var date: Date?
     @NSManaged public var day: Int32
     @NSManaged public var drone: Int32
     @NSManaged public var fieldArtillery: Int32
@@ -32,6 +32,6 @@ extension MilitaryLosses {
 
 }
 
-extension MilitaryLosses : Identifiable {
+extension MilitaryLossesCoreData : Identifiable {
 
 }
