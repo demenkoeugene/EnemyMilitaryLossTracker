@@ -8,22 +8,6 @@
 import UIKit
 import CoreData
 
-struct Labels {
-    let dayLabel = UILabel()
-    let personellLabel = UILabel()
-    let aircraftLabel = UILabel()
-    let helicopterLabel = UILabel()
-    let tankLabel = UILabel()
-    let APCLabel = UILabel()
-    let fieldArtilleryLabel = UILabel()
-    let MRLLabel = UILabel()
-    let droneLabel = UILabel()
-    let navalShipLabel = UILabel()
-    let antiAircraftWarfareLabel = UILabel()
-    let militaryAutoLabel = UILabel()
-    let fuelTankLabel = UILabel()
-}
-
 class LossesController: UIViewController {
     
     let context = PersistenceController.shared.container.viewContext
@@ -40,26 +24,36 @@ class LossesController: UIViewController {
         return label
     }()
     
-    var labels = Labels()
+    private struct Labels {
+        let dayLabel = UILabel()
+        let personellLabel = UILabel()
+        let aircraftLabel = UILabel()
+        let helicopterLabel = UILabel()
+        let tankLabel = UILabel()
+        let APCLabel = UILabel()
+        let fieldArtilleryLabel = UILabel()
+        let MRLLabel = UILabel()
+        let droneLabel = UILabel()
+        let navalShipLabel = UILabel()
+        let antiAircraftWarfareLabel = UILabel()
+        let militaryAutoLabel = UILabel()
+        let fuelTankLabel = UILabel()
+    }
+    
+    private lazy var labels = Labels()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        fetchData {
-            // This block will be executed after data fetching and sorting are done
-            let currentDate = self.results.first?.date ?? Date() // Get the current date
-            print("current date \(currentDate)")
-            self.fetchMilitaryLosses(for: currentDate) // Fetch data for the current date
-            self.datePicker.date = currentDate
-        }
-        
-        createDataPicker()
-        // Add dataLabel to the view hierarchy
-        view.addSubview(dataLabel)
+        configureUI()
+        fetchDataAndSetupViews()
+    }
+    
+    
+    private func configureUI() {
+        createDatePicker()
         setupLabelConstraints()
-        
-        // Configure Auto Layout constraints for the label
+        view.addSubview(dataLabel)
         NSLayoutConstraint.activate([
             dataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             dataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -68,6 +62,15 @@ class LossesController: UIViewController {
         ])
     }
     
+    
+    private func fetchDataAndSetupViews() {
+        fetchData {
+            let currentDate = self.results.first?.date ?? Date()
+            print("current date \(currentDate)")
+            self.fetchMilitaryLosses(for: currentDate)
+            self.datePicker.date = currentDate
+        }
+    }
     
     private func setupLabelConstraints() {
         let labelArray = [
@@ -104,7 +107,7 @@ class LossesController: UIViewController {
     }
     
     
-    func createDataPicker() {
+    func createDatePicker() {
         // Create and configure the date picker
         datePicker.datePickerMode = .date
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -124,8 +127,10 @@ class LossesController: UIViewController {
         
         
         // Add Auto Layout constraints for positioning
+        
         datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         datePicker.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
+        
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
     }
     
@@ -137,114 +142,132 @@ class LossesController: UIViewController {
     }
     
     
-    private func updateLabels(for key: String, current: Int, previous: Int) -> String {
-        let change = current - previous
-        let changeString = change != 0 ? "(\(change > 0 ? "+" : "")\(change))" : ""
-        return "\(key): \(current) \(changeString)"
-    }
+   
     
     private func fetchMilitaryLosses(for date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        // Find the military loss entry that matches the selected date
-        if let (currentMilitaryLoss, currentPersonnelLoss) = groupedData[date],
-           let previousDate = Calendar.current.date(byAdding: .day, value: -1, to: date),
-           let (previousMilitaryLoss, previousPersonnelLoss) = groupedData[previousDate] {
-            
-            // Display current day's values along with changes
-            labels.dayLabel.text = "Day: \(currentMilitaryLoss.day)"
-            labels.personellLabel.text = updateLabels(for: "Personell", current: Int(currentPersonnelLoss.personnel), previous: Int(previousPersonnelLoss.personnel))
-            labels.aircraftLabel.text = updateLabels(for: "Aircraft", current: Int(currentMilitaryLoss.aircraft), previous: Int(previousMilitaryLoss.aircraft))
-            labels.helicopterLabel.text = updateLabels(for: "Helicopter", current: Int(currentMilitaryLoss.helicopter), previous: Int(previousMilitaryLoss.helicopter))
-            labels.tankLabel.text = updateLabels(for: "Tank", current: Int(currentMilitaryLoss.tank), previous: Int(previousMilitaryLoss.tank))
-            labels.APCLabel.text = updateLabels(for: "APC", current: Int(currentMilitaryLoss.apc), previous: Int(previousMilitaryLoss.apc))
-            labels.fieldArtilleryLabel.text = updateLabels(for: "Field Artillery", current: Int(currentMilitaryLoss.fieldArtillery), previous: Int(previousMilitaryLoss.fieldArtillery))
-            labels.MRLLabel.text = updateLabels(for: "MRL", current: Int(currentMilitaryLoss.mrl), previous: Int(previousMilitaryLoss.mrl))
-            
-            labels.droneLabel.text = updateLabels(for: "Drone", current: Int(currentMilitaryLoss.drone), previous: Int(previousMilitaryLoss.drone))
-            labels.navalShipLabel.text = updateLabels(for: "Naval Ship", current: Int(currentMilitaryLoss.navalShip), previous: Int(previousMilitaryLoss.navalShip))
-            labels.antiAircraftWarfareLabel.text = updateLabels(for: "Anti-Aircraft Warfare", current: Int(currentMilitaryLoss.antiAircraftWarfare), previous: Int(previousMilitaryLoss.antiAircraftWarfare))
-            if currentMilitaryLoss.militaryAuto != 0 {
-                labels.militaryAutoLabel.text = updateLabels(for: "Military Auto", current: Int(currentMilitaryLoss.militaryAuto), previous: Int(previousMilitaryLoss.militaryAuto))
-            } else {
-                labels.militaryAutoLabel.text = ""
-            }
-
-            if currentMilitaryLoss.fuelTank != 0 {
-                labels.fuelTankLabel.text = updateLabels(for: "Fuel Tank", current: Int(currentMilitaryLoss.fuelTank), previous: Int(previousMilitaryLoss.fuelTank))
-            } else {
-                labels.fuelTankLabel.text = ""
-            }
-
-            
-            dataLabel.text = ""
-        } else {
-            // Clear the text of all labels
-            labels.dayLabel.text = ""
-            labels.personellLabel.text = ""
-            labels.aircraftLabel.text = ""
-            labels.helicopterLabel.text = ""
-            labels.tankLabel.text = ""
-            labels.APCLabel.text = ""
-            labels.fieldArtilleryLabel.text = ""
-            labels.MRLLabel.text = ""
-            labels.militaryAutoLabel.text = ""
-            labels.fuelTankLabel.text = ""
-            labels.droneLabel.text = ""
-            labels.navalShipLabel.text = ""
-            labels.antiAircraftWarfareLabel.text = ""
-            
+        guard let (currentMilitaryLoss, currentPersonnelLoss) = groupedData[date],
+              let previousDate = Calendar.current.date(byAdding: .day, value: -1, to: date),
+              let (previousMilitaryLoss, previousPersonnelLoss) = groupedData[previousDate] else {
+            clearLabels()
             dataLabel.text = "No data available for the selected date."
+            return
         }
+        
+        labels.dayLabel.text = "Day: \(currentMilitaryLoss.day)"
+        
+        let labelData: [(UILabel, String, Int32, Int32)] = [
+            (labels.personellLabel, "Personell", currentPersonnelLoss.personnel, previousPersonnelLoss.personnel),
+            (labels.aircraftLabel, "Aircraft", currentMilitaryLoss.aircraft, previousMilitaryLoss.aircraft),
+            (labels.helicopterLabel, "Helicopter", currentMilitaryLoss.helicopter, previousMilitaryLoss.helicopter),
+            (labels.tankLabel, "Tank", currentMilitaryLoss.tank, previousMilitaryLoss.tank),
+            (labels.APCLabel, "APC", currentMilitaryLoss.apc, previousMilitaryLoss.apc),
+            (labels.fieldArtilleryLabel, "Field Artillery", currentMilitaryLoss.fieldArtillery, previousMilitaryLoss.fieldArtillery),
+            (labels.MRLLabel, "MRL", currentMilitaryLoss.mrl, previousMilitaryLoss.mrl),
+            (labels.droneLabel, "Drone", currentMilitaryLoss.drone, previousMilitaryLoss.drone),
+            (labels.navalShipLabel, "Naval Ship", currentMilitaryLoss.navalShip, previousMilitaryLoss.navalShip),
+            (labels.antiAircraftWarfareLabel, "Anti-Aircraft Warfare", currentMilitaryLoss.antiAircraftWarfare, previousMilitaryLoss.antiAircraftWarfare)
+        ]
+        
+        for (label, key, current, previous) in labelData {
+            updateLabel(label, with: key, current: current, previous: previous)
+        }
+        
+        if currentMilitaryLoss.militaryAuto != 0 {
+            updateLabel(labels.militaryAutoLabel,
+                        with: "Military Auto",
+                        current: currentMilitaryLoss.militaryAuto,
+                        previous: previousMilitaryLoss.militaryAuto)
+        } else {
+            labels.militaryAutoLabel.text = ""
+        }
+        
+        dataLabel.text = ""
+    }
+
+    
+    private func updateLabel(_ label: UILabel, with key: String, current: Int32, previous: Int32) {
+        let change = Int(current) - Int(previous)
+        let changeString = change != 0 ? "(\(change > 0 ? "+" : "")\(change))" : ""
+        label.text = "\(key): \(current) \(changeString)"
     }
     
+    private func clearLabels() {
+        let allLabels = [
+            labels.dayLabel,
+            labels.personellLabel,
+            labels.aircraftLabel,
+            labels.helicopterLabel,
+            labels.tankLabel,
+            labels.APCLabel,
+            labels.fieldArtilleryLabel,
+            labels.MRLLabel,
+            labels.militaryAutoLabel,
+            labels.fuelTankLabel,
+            labels.droneLabel,
+            labels.navalShipLabel,
+            labels.antiAircraftWarfareLabel
+        ]
+        
+        allLabels.forEach { $0.text = "" }
+    }
 }
 
 extension LossesController {
-    
     private func fetchData(completion: @escaping () -> Void) {
-        APIManager.shared.getEquipmentLosses(viewContext: context) { error in
+        APIManager.shared.getEquipmentLosses(viewContext: context) { [weak self] error in
             if let error = error {
-                // Handle the error here
-                print("Error fetching and saving equipment losses:", error)
+                self?.handleError("equipment", error)
             } else {
-                APIManager.shared.getPersonnelLosses(viewContext: self.context) { [self] error in
-                    if let error = error {
-                        // Handle the error here
-                        print("Error fetching and saving personnel losses:", error)
-                    } else {
-                        let fetchRequestMil: NSFetchRequest<MilitaryLossesCoreData> = MilitaryLossesCoreData.fetchRequest()
-                        let fetchRequestPers: NSFetchRequest<PersonelLossesCoreData> = PersonelLossesCoreData.fetchRequest()
-                        do {
-                            self.results = try self.context.fetch(fetchRequestMil)
-                            self.results.sort { $0.date! > $1.date! }
-                            self.personnelArray = try self.context.fetch(fetchRequestPers)
-                            self.personnelArray.sort { $0.date! > $1.date! }
-                            print("Data fetched and saved successfully.")
-                            
-                           
-                            for militaryLoss in self.results {
-                                if let personnelLoss = personnelArray.first(where: { Calendar.current.isDate($0.date!, inSameDayAs: militaryLoss.date!) }) {
-                                    groupedData[militaryLoss.date!] = (militaryLoss, personnelLoss)
-                                }
-                            }
-                            
-                          
-                            
-                        } catch {
-                            print("Error fetching data: \(error)")
-                        }
-                    }
-                    
-                    completion() // Call the completion handler once both methods are done
-                }
+                self?.fetchPersonnelLosses(completion: completion)
             }
         }
     }
-
+    
+    private func fetchPersonnelLosses(completion: @escaping () -> Void) {
+        APIManager.shared.getPersonnelLosses(viewContext: context) { [weak self] error in
+            if let error = error {
+                self?.handleError("personnel", error)
+            } else {
+                self?.fetchAndSortData(completion: completion)
+            }
+        }
+    }
+    
+    private func fetchAndSortData(completion: @escaping () -> Void) {
+        let fetchRequestMil: NSFetchRequest<MilitaryLossesCoreData> = MilitaryLossesCoreData.fetchRequest()
+        let fetchRequestPers: NSFetchRequest<PersonelLossesCoreData> = PersonelLossesCoreData.fetchRequest()
+        
+        do {
+            self.results = try context.fetch(fetchRequestMil)
+            self.results.sort { $0.date! > $1.date! }
+            self.personnelArray = try context.fetch(fetchRequestPers)
+            self.personnelArray.sort { $0.date! > $1.date! }
+            
+            groupData()
+            
+            print("Data fetched and saved successfully.")
+        } catch {
+            print("Error fetching data: \(error)")
+        }
+        
+        completion() // Call the completion handler once data fetching and sorting are done
+    }
+    
+    private func handleError(_ type: String, _ error: Error) {
+        print("Error fetching and saving \(type) losses:", error)
+    }
+    
+    private func groupData() {
+        for militaryLoss in results {
+            if let personnelLoss = personnelArray.first(where: { Calendar.current.isDate($0.date!, inSameDayAs: militaryLoss.date!) }) {
+                groupedData[militaryLoss.date!] = (militaryLoss, personnelLoss)
+            }
+        }
+    }
 }
-
 
 
 
