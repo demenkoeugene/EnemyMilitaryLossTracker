@@ -10,13 +10,16 @@ import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
-
+    
     let container: NSPersistentContainer
-
+    
     init() {
         container = NSPersistentContainer(name: "MacPawBootCampDemenko")
-        container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        container.loadPersistentStores(completionHandler: {_,_ in })
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
@@ -24,7 +27,7 @@ struct PersistenceController {
         let context = container.viewContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PersonelLossesCoreData")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-
+        
         do {
             try context.execute(deleteRequest)
             try context.save()  // Save the changes after deletion
@@ -32,7 +35,7 @@ struct PersistenceController {
             print("Error clearing data: \(error)")
         }
     }
-
-   
+    
+    
 }
 

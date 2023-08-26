@@ -51,22 +51,21 @@ class EquipmentController: UIViewController, UISearchResultsUpdating {
     }
     
     private func fetchData() {
-        APIManager.shared.getEquipmentLossesOryx(viewContext: context) { error in
+        APIManager.shared.getEquipmentLossesOryx(viewContext: context) { [weak self] error in
+            guard let self = self else { return }
+            
             if let error = error {
-                // Handle the error here
-                print("Error fetching and saving personnel losses:", error)
+                print("Error fetching and saving equipment losses:", error)
             } else {
-                self.fetch() // Only one call is needed here
-                print("Personnel losses fetched and saved successfully.")
+                self.fetchDataAndUpdateUI()
+                print("Equipment losses fetched and saved successfully.")
             }
         }
     }
     
-    private func fetch() {
-        let fetchRequest: NSFetchRequest<EquipmentLossesOryxCoreData> = EquipmentLossesOryxCoreData.fetchRequest()
-        
+    private func fetchDataAndUpdateUI() {
         do {
-            results = try context.fetch(fetchRequest)
+            results = try context.fetch(EquipmentLossesOryxCoreData.fetchRequest())
             categoriesEquipment = Equipment(equipment: results)
             print("Total results count:", results.count)
             tableView.reloadData()

@@ -16,6 +16,7 @@
 		F6724DDD2A98AE370023D03E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DDC2A98AE370023D03E /* SplashViewController.swift */; };
 		F6724DE02A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DDE2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */; };
 		F6724DE12A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DDF2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */; };
+		F67C59DF2A9A8CDE00A84D07 /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C59DE2A9A8CDE00A84D07 /* APIManagerTests.swift */; };
 		F6808F822A94AD41001F1693 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F812A94AD41001F1693 /* UIView.swift */; };
 		F6808F842A94AE59001F1693 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F832A94AE59001F1693 /* CustomCell.swift */; };
 		F6808F862A94B83B001F1693 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F852A94B83B001F1693 /* DetailViewController.swift */; };
@@ -62,6 +63,7 @@
 		F6724DDC2A98AE370023D03E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F6724DDE2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F6724DDF2A98C6100023D03E /* MilitaryLossesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryLossesCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F67C59DE2A9A8CDE00A84D07 /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 		F6808F812A94AD41001F1693 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F6808F832A94AE59001F1693 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F6808F852A94B83B001F1693 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				F6F7744C2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift */,
+				F67C59DE2A9A8CDE00A84D07 /* APIManagerTests.swift */,
 			);
 			path = MacPawBootCampDemenkoTests;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67C59DF2A9A8CDE00A84D07 /* APIManagerTests.swift in Sources */,
 				F6F7744D2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

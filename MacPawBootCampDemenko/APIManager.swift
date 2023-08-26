@@ -19,8 +19,6 @@ class APIManager {
     private let equipmentLossesOryxURL = "https://raw.githubusercontent.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset/5fc26df03f91acfe175bc856dbd4fd9e5b77ab09/data/russia_losses_equipment_oryx.json"
     
     // MARK: - Getting personnel loss data from JSON
-    
-    
     func getPersonnelLosses(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         // Clear existing data if needed
         PersistenceController.shared.clear()
@@ -95,8 +93,6 @@ class APIManager {
     
     
     // MARK: - Getting equipment loss data from JSON
-    
-    
     func getEquipmentLosses(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         // Clear existing data if needed
         PersistenceController.shared.clear()
@@ -177,8 +173,7 @@ class APIManager {
     
     
     
-    func getEquipmentLossesOryx(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler){
-        // Clear existing data if needed
+    func getEquipmentLossesOryx(viewContext: NSManagedObjectContext, completion: @escaping CompletionHandler) {
         PersistenceController.shared.clear()
         
         guard let url = URL(string: equipmentLossesOryxURL) else {
@@ -195,6 +190,7 @@ class APIManager {
                 completion(error)
                 return
             }
+            
             guard let data = data else {
                 print("No data received")
                 completion(nil)
@@ -205,30 +201,7 @@ class APIManager {
                 let oryxData: [EquipmentLossesOryxModel] = try JSONDecoder().decode([EquipmentLossesOryxModel].self, from: data)
                 print("Decoded personnel losses count:", oryxData.count)
                 
-                viewContext.perform {
-                    for oryxDataItem in oryxData {
-                        let oryxdatacore = EquipmentLossesOryxCoreData(context: viewContext)
-                        
-                        oryxdatacore.equipmentOryx = oryxDataItem.equipmentOryx
-                        oryxdatacore.model = oryxDataItem.model
-                        oryxdatacore.manufacturer = oryxDataItem.manufacturer
-                        oryxdatacore.lossesTotal =  Int32(oryxDataItem.lossesTotal)
-                        oryxdatacore.equipmentUA = oryxDataItem.equipmentUA
-                    }
-                    
-                    do {
-                        
-                        try viewContext.save()
-                        
-                        let finalCount = try? viewContext.count(for: EquipmentLossesOryxCoreData.fetchRequest())
-                        print("Final Count:", finalCount ?? "N/A")
-                        completion(nil)
-                        
-                    } catch {
-                        print("Error saving context: \(error)")
-                        completion(error)
-                    }
-                }
+                self.saveOryxDataToContext(oryxData, in: viewContext, completion: completion)
                 
             } catch {
                 print("Decoding error:", error)
@@ -236,7 +209,40 @@ class APIManager {
             }
         }.resume()
     }
-    
+
+    private func saveOryxDataToContext(_ oryxData: [EquipmentLossesOryxModel], in context: NSManagedObjectContext, completion: @escaping CompletionHandler) {
+        context.perform {
+            for oryxDataItem in oryxData {
+                let oryxDataCore = EquipmentLossesOryxCoreData(context: context)
+                oryxDataCore.equipmentOryx = oryxDataItem.equipmentOryx
+                oryxDataCore.model = oryxDataItem.model
+                oryxDataCore.manufacturer = oryxDataItem.manufacturer
+                oryxDataCore.lossesTotal = Int32(oryxDataItem.lossesTotal)
+                oryxDataCore.equipmentUA = oryxDataItem.equipmentUA
+            }
+            
+            do {
+                try context.save()
+                print("Data saved to context successfully.")
+                self.updateContextCount(in: context, completion: completion)
+            } catch {
+                print("Error saving context: \(error)")
+                completion(error)
+            }
+        }
+    }
+
+    private func updateContextCount(in context: NSManagedObjectContext, completion: @escaping CompletionHandler) {
+        do {
+            let finalCount = try context.count(for: EquipmentLossesOryxCoreData.fetchRequest())
+            print("Final Count:", finalCount)
+            completion(nil)
+        } catch {
+            print("Error getting context count: \(error)")
+            completion(error)
+        }
+    }
+
     
     
     func parseDonationJSON(completion: @escaping (Result<[DonationModel], Error>) -> Void) {
