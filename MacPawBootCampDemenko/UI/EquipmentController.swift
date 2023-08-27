@@ -24,7 +24,16 @@ class EquipmentController: UIViewController, UISearchResultsUpdating {
         self.setupSearchController()
         configureTableView()
         fetchData()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
+    @objc func refreshData() {
+        fetchDataAndUpdateUI()
+        tableView.refreshControl?.endRefreshing()
+    }
+
     
     private func setupSearchController(){
         self.searchController.searchResultsUpdater = self
