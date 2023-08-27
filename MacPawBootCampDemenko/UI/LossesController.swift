@@ -166,9 +166,9 @@ class LossesController: UIViewController {
             (labels.aircraftLabel, "Aircraft", currentMilitaryLoss.aircraft, previousMilitaryLoss.aircraft),
             (labels.helicopterLabel, "Helicopter", currentMilitaryLoss.helicopter, previousMilitaryLoss.helicopter),
             (labels.tankLabel, "Tank", currentMilitaryLoss.tank, previousMilitaryLoss.tank),
-            (labels.APCLabel, "APC", currentMilitaryLoss.apc, previousMilitaryLoss.apc),
+            (labels.APCLabel, "Armored Personnel Carrier", currentMilitaryLoss.apc, previousMilitaryLoss.apc),
             (labels.fieldArtilleryLabel, "Field Artillery", currentMilitaryLoss.fieldArtillery, previousMilitaryLoss.fieldArtillery),
-            (labels.MRLLabel, "MRL", currentMilitaryLoss.mrl, previousMilitaryLoss.mrl),
+            (labels.MRLLabel, "Multiple Rocket Launcher", currentMilitaryLoss.mrl, previousMilitaryLoss.mrl),
             (labels.droneLabel, "Drone", currentMilitaryLoss.drone, previousMilitaryLoss.drone),
             (labels.navalShipLabel, "Naval Ship", currentMilitaryLoss.navalShip, previousMilitaryLoss.navalShip),
             (labels.antiAircraftWarfareLabel, "Anti-Aircraft Warfare", currentMilitaryLoss.antiAircraftWarfare, previousMilitaryLoss.antiAircraftWarfare)

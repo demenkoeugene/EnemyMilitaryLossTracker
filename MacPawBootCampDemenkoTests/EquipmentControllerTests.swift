@@ -42,7 +42,7 @@ class EquipmentControllerTests: XCTestCase {
     func testTableViewNumberOfRowsInSection() {
         let numberOfRows = equipmentController.tableView(equipmentController.tableView, numberOfRowsInSection: 0)
 
-        // Test the number of rows based on your test data
+        // Test the number of rows based on test data
         XCTAssertEqual(numberOfRows, equipmentController.categoriesEquipment.allArrays.count)
     }
 

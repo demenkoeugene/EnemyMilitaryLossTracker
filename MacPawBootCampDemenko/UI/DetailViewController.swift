@@ -9,7 +9,17 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var selectedEquipmentArray: [EquipmentLossesOryxCoreData]?
+    lazy var selectedEquipmentArray: [EquipmentLossesOryxCoreData]? = {
+        if let equipmentArray = self.selectedEquipmentArray {
+            let uniqueEquipmentSet = Set(equipmentArray)
+            return Array(uniqueEquipmentSet)
+        }
+        return nil
+    }()
+    
+    var tableView: UITableView!
+    var ascendingOrder = true // Tracks the current sorting order
+    
     
     // Labels to display the data
     let dayLabel = UILabel()
@@ -19,11 +29,33 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = selectedEquipmentArray?.first?.equipmentOryx
-        
         navigationItem.largeTitleDisplayMode = .never
-        setupUI()
         
+        // Create a single filter button
+        let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle"), style: .plain, target: self, action: #selector(toggleSorting))
+        navigationItem.rightBarButtonItem = filterButton
+        
+        setupUI()
     }
+    
+    
+    @objc private func toggleSorting() {
+        ascendingOrder.toggle()
+        updateSortingButtonImage()
+        sortSelectedEquipmentArray()
+        tableView.reloadData()
+    }
+    
+    private func updateSortingButtonImage() {
+        let imageName = ascendingOrder ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill"
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: imageName)
+    }
+    
+    private func sortSelectedEquipmentArray() {
+        selectedEquipmentArray?.sort { ascendingOrder ? $0.lossesTotal < $1.lossesTotal : $0.lossesTotal > $1.lossesTotal }
+    }
+    
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,12 +69,14 @@ class DetailViewController: UIViewController {
     }
     
     private func setupUI() {
-        let tableView = UITableView(frame: view.bounds)
+        tableView = UITableView(frame: view.bounds) // Use the instance variable tableView
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellIdentifier")
         view.addSubview(tableView)
         tableView.reloadData() // Reload the table view to display the data
     }
+    
+    
     
     
     

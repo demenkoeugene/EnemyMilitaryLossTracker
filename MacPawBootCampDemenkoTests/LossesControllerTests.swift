@@ -15,7 +15,7 @@ class LossesControllerTests: XCTestCase {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
-        // Create an instance of your LossesController
+        // Create an instance of LossesController
         let lossesController = LossesController()
 
         // Create a UIDatePicker object (if needed)
@@ -32,11 +32,6 @@ class LossesControllerTests: XCTestCase {
             datePicker.date = currentDate
             lossesController.datePickerValueChanged(datePicker)
 
-            // Now you can assert the changes in the labels or any other relevant behavior
-            // For example, you might want to check if the labels are correctly updated
-            // based on the selected date
-            
-            // XCTAssertEqual(lossesController.labels.dayLabel.text, "Day: \(currentDate)")
             
             // Move to the next date
             currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!

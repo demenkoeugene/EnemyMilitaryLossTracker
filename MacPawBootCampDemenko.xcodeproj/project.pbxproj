@@ -533,6 +533,8 @@
 				DEVELOPMENT_TEAM = 9495ZGT5QK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MacPawBootCampDemenko/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Enemy Loss Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -561,6 +563,8 @@
 				DEVELOPMENT_TEAM = 9495ZGT5QK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MacPawBootCampDemenko/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Enemy Loss Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
