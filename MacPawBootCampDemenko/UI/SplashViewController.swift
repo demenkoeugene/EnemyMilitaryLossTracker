@@ -20,8 +20,8 @@ class SplashViewController: UIViewController {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "by Yevhenii Demenko\nfor MacPawBootCamp Summer 2023"
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = "by Yevhenii Demenko for"
+        label.font = UIFont.systemFont(ofSize: 18)
         label.alpha = 0
         label.textAlignment = .center
         label.numberOfLines = 2 
@@ -41,12 +41,12 @@ class SplashViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             backgroundImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            backgroundImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
+            backgroundImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
             backgroundImageView.widthAnchor.constraint(equalToConstant: 300),
-            backgroundImageView.heightAnchor.constraint(equalToConstant: 300),
+            backgroundImageView.heightAnchor.constraint(equalToConstant: 400),
             
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.bottomAnchor.constraint(equalTo: backgroundImageView.topAnchor, constant: -10)
+            label.bottomAnchor.constraint(equalTo: backgroundImageView.topAnchor, constant: 0)
         ])
     }
     
