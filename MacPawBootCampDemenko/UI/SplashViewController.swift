@@ -20,13 +20,15 @@ class SplashViewController: UIViewController {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "by Yevhenii Demenko for"
+        label.text = "by Yevhenii Demenko\nfor MacPawBootCamp Summer 2023"
         label.font = UIFont.systemFont(ofSize: 16)
         label.alpha = 0
         label.textAlignment = .center
+        label.numberOfLines = 2 
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6155DFD2A9B3B46007D0B47 /* LossesControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6155DFC2A9B3B46007D0B47 /* LossesControllerTests.swift */; };
+		F6155E002A9B3D9D007D0B47 /* EquipmentControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6155DFF2A9B3D9D007D0B47 /* EquipmentControllerTests.swift */; };
+		F63518D42A9B46F90096FD33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63518D32A9B46F90096FD33 /* AppDelegate.swift */; };
 		F6724DAF2A97D7E10023D03E /* EquipmentOryxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DAE2A97D7E10023D03E /* EquipmentOryxModel.swift */; };
 		F6724DB32A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6724DB12A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodeld */; };
 		F6724DD62A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6724DD02A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift */; };
@@ -23,7 +26,6 @@
 		F6808F882A94CED8001F1693 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F872A94CED8001F1693 /* TabbarController.swift */; };
 		F6808F8A2A94CFAE001F1693 /* LossesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F892A94CFAE001F1693 /* LossesController.swift */; };
 		F6808F8C2A94D4A3001F1693 /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6808F8B2A94D4A3001F1693 /* DonationViewController.swift */; };
-		F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774322A93F54900E689A9 /* AppDelegate.swift */; };
 		F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774342A93F54900E689A9 /* SceneDelegate.swift */; };
 		F6F774372A93F54900E689A9 /* EquipmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F774362A93F54900E689A9 /* EquipmentController.swift */; };
 		F6F7743F2A93F54A00E689A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F7743E2A93F54A00E689A9 /* Assets.xcassets */; };
@@ -54,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6155DFC2A9B3B46007D0B47 /* LossesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesControllerTests.swift; sourceTree = "<group>"; };
+		F6155DFF2A9B3D9D007D0B47 /* EquipmentControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentControllerTests.swift; sourceTree = "<group>"; };
+		F63518D32A9B46F90096FD33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6724DAE2A97D7E10023D03E /* EquipmentOryxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentOryxModel.swift; sourceTree = "<group>"; };
 		F6724DB22A98791B0023D03E /* MacPawBootCampDemenko.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MacPawBootCampDemenko.xcdatamodel; sourceTree = "<group>"; };
 		F6724DD02A98807F0023D03E /* PersonelLossesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonelLossesCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -71,7 +76,6 @@
 		F6808F892A94CFAE001F1693 /* LossesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesController.swift; sourceTree = "<group>"; };
 		F6808F8B2A94D4A3001F1693 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		F6F7742F2A93F54900E689A9 /* MacPawBootCampDemenko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacPawBootCampDemenko.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6F774322A93F54900E689A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F774342A93F54900E689A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F6F774362A93F54900E689A9 /* EquipmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentController.swift; sourceTree = "<group>"; };
 		F6F7743E2A93F54A00E689A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F63518D22A9B46E30096FD33 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6F774672A93F7A400E689A9 /* APIManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F6724DB02A97D7EB0023D03E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,10 +173,10 @@
 			isa = PBXGroup;
 			children = (
 				F6F7746C2A93F7E500E689A9 /* data */,
-				F6808F8D2A952F20001F1693 /* UI */,
-				F6F774322A93F54900E689A9 /* AppDelegate.swift */,
+				F63518D32A9B46F90096FD33 /* AppDelegate.swift */,
 				F6F774342A93F54900E689A9 /* SceneDelegate.swift */,
-				F6F774672A93F7A400E689A9 /* APIManager.swift */,
+				F6808F8D2A952F20001F1693 /* UI */,
+				F63518D22A9B46E30096FD33 /* Controller */,
 				F6724DB02A97D7EB0023D03E /* Model */,
 				F6F7743E2A93F54A00E689A9 /* Assets.xcassets */,
 				F6F774432A93F54A00E689A9 /* Info.plist */,
@@ -178,6 +190,8 @@
 			children = (
 				F6F7744C2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift */,
 				F67C59DE2A9A8CDE00A84D07 /* APIManagerTests.swift */,
+				F6155DFC2A9B3B46007D0B47 /* LossesControllerTests.swift */,
+				F6155DFF2A9B3D9D007D0B47 /* EquipmentControllerTests.swift */,
 			);
 			path = MacPawBootCampDemenkoTests;
 			sourceTree = "<group>";
@@ -353,7 +367,7 @@
 				F6808F822A94AD41001F1693 /* UIView.swift in Sources */,
 				F6808F8A2A94CFAE001F1693 /* LossesController.swift in Sources */,
 				F6724DE02A98C6100023D03E /* MilitaryLossesCoreData+CoreDataClass.swift in Sources */,
-				F6F774332A93F54900E689A9 /* AppDelegate.swift in Sources */,
+				F63518D42A9B46F90096FD33 /* AppDelegate.swift in Sources */,
 				F6F774352A93F54900E689A9 /* SceneDelegate.swift in Sources */,
 				F6808F882A94CED8001F1693 /* TabbarController.swift in Sources */,
 			);
@@ -363,6 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6155E002A9B3D9D007D0B47 /* EquipmentControllerTests.swift in Sources */,
+				F6155DFD2A9B3B46007D0B47 /* LossesControllerTests.swift in Sources */,
 				F67C59DF2A9A8CDE00A84D07 /* APIManagerTests.swift in Sources */,
 				F6F7744D2A93F54A00E689A9 /* MacPawBootCampDemenkoTests.swift in Sources */,
 			);
@@ -519,8 +535,9 @@
 				INFOPLIST_FILE = MacPawBootCampDemenko/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,8 +563,9 @@
 				INFOPLIST_FILE = MacPawBootCampDemenko/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

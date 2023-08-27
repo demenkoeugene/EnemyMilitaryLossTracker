@@ -24,7 +24,7 @@ class LossesController: UIViewController {
         return label
     }()
     
-    private struct Labels {
+    internal struct Labels {
         let dayLabel = UILabel()
         let personellLabel = UILabel()
         let aircraftLabel = UILabel()
@@ -40,7 +40,7 @@ class LossesController: UIViewController {
         let fuelTankLabel = UILabel()
     }
     
-    private lazy var labels = Labels()
+    lazy var labels = Labels()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +64,14 @@ class LossesController: UIViewController {
     
     
     private func fetchDataAndSetupViews() {
-        fetchData {
-            let currentDate = self.results.first?.date ?? Date()
-            print("current date \(currentDate)")
-            self.fetchMilitaryLosses(for: currentDate)
-            self.datePicker.date = currentDate
+        DispatchQueue.main.async {
+            self.fetchData {
+            
+                let currentDate = self.results.first?.date ?? Date()
+                print("current date \(currentDate)")
+                self.fetchMilitaryLosses(for: currentDate)
+                self.datePicker.date = currentDate
+            }
         }
     }
     
@@ -253,7 +256,7 @@ extension LossesController {
             print("Error fetching data: \(error)")
         }
         
-        completion() // Call the completion handler once data fetching and sorting are done
+        completion()
     }
     
     private func handleError(_ type: String, _ error: Error) {
@@ -261,12 +264,15 @@ extension LossesController {
     }
     
     private func groupData() {
+        let personnelDictionary = Dictionary(grouping: personnelArray, by: { $0.date! })
+        
         for militaryLoss in results {
-            if let personnelLoss = personnelArray.first(where: { Calendar.current.isDate($0.date!, inSameDayAs: militaryLoss.date!) }) {
-                groupedData[militaryLoss.date!] = (militaryLoss, personnelLoss)
+            if let personnelLosses = personnelDictionary[militaryLoss.date!]?.first {
+                groupedData[militaryLoss.date!] = (militaryLoss, personnelLosses)
             }
         }
     }
+
 }
 
 

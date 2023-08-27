@@ -10,7 +10,7 @@ import UIKit
 class EquipmentController: UIViewController, UISearchResultsUpdating {
     
     let context = PersistenceController.shared.container.viewContext
-    private var results: [EquipmentLossesOryxCoreData] = []
+    var results: [EquipmentLossesOryxCoreData] = []
     private var searchController = UISearchController(searchResultsController: nil)
     
     var categoriesEquipment = Equipment()
@@ -50,7 +50,7 @@ class EquipmentController: UIViewController, UISearchResultsUpdating {
         tableView.dataSource = self
     }
     
-    private func fetchData() {
+    func fetchData() {
         APIManager.shared.getEquipmentLossesOryx(viewContext: context) { [weak self] error in
             guard let self = self else { return }
             
@@ -63,7 +63,7 @@ class EquipmentController: UIViewController, UISearchResultsUpdating {
         }
     }
     
-    private func fetchDataAndUpdateUI() {
+    func fetchDataAndUpdateUI() {
         do {
             results = try context.fetch(EquipmentLossesOryxCoreData.fetchRequest())
             categoriesEquipment = Equipment(equipment: results)
